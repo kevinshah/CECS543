@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.Box;
 
+
 public class Test1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,7 +22,7 @@ public class Test1 {
         
        
 
-       // 4 rows and 5 coloums
+       // 4 rows and 5 columns
         
         String[] columnNames = {"",
                 "Learning",
