@@ -32,8 +32,11 @@ public class Test1 {
         
         JTable table = new JTable(4, 5);
         
-      //  Image image = new ImageIcon("C:\\Users\\vishalvibhandik\\workspace\\CECS_BS\\src\\CSULBMap3.png").getImage();
-        Image image = new ImageIcon("/Users/Kevin/Documents/workspace/CECS_BS/src/CSULBMap3.png").getImage();
+        // Nirupama /c/Nirupama/SEproject/CECS543    SEproject\CECS543\CECS_BS\src
+
+        Image image = new ImageIcon("C:\\Nirupama\\SEproject\\CECS543\\CECS_BS\\src\\CSULBMap3.png").getImage();
+        //Kevin
+        //  Image image = new ImageIcon("/Users/Kevin/Documents/workspace/CECS_BS/src/CSULBMap3.png").getImage();
         
         JLabel jl = new JLabel(new ImageIcon(image));
         
