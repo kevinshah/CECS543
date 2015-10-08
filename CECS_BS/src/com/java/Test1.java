@@ -1,3 +1,4 @@
+package com.java;
 import javax.swing.*;
 //NIRU COMMIT
 import java.awt.*;
@@ -33,10 +34,9 @@ public class Test1 {
         JTable table = new JTable(4, 5);
         
         // Nirupama /c/Nirupama/SEproject/CECS543    SEproject\CECS543\CECS_BS\src
-
-        Image image = new ImageIcon("C:\\Nirupama\\SEproject\\CECS543\\CECS_BS\\src\\CSULBMap3.png").getImage();
-        //Kevin
-        //  Image image = new ImageIcon("/Users/Kevin/Documents/workspace/CECS_BS/src/CSULBMap3.png").getImage();
+        Image image = new ImageIcon("C:\\Nirupama\\SEproject\\CECS543\\CECS_BS\\src\\com\\drawable\\CSULBMap3.png").getImage();
+        //Kevin  
+        //  Image image = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/CSULBMap3.png").getImage();
         
         JLabel jl = new JLabel(new ImageIcon(image));
         
