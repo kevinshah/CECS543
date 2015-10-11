@@ -1,42 +1,37 @@
 package com.java;
 import javax.swing.*;
-//NIRU COMMIT
+
 import java.awt.*;
-import javax.swing.Box;
 
 
 public class Test1 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		JFrame frame = new JFrame();
 		
+		//For the names
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
         
-        JButton drawCardButton = new  JButton("Draw Card");
-        JButton moveButton = new  JButton("Move");
-        JButton playCardButton = new  JButton("Play Card");
+        JPanel upperPanel = new JPanel();
         JPanel bottomPanel = new JPanel();
-        JPanel buttonPanel1 = new JPanel();
         
-       
-
-       // 4 rows and 5 columns
+        JPanel drawCardPanel = new JPanel();
+        JPanel moveCardPanel = new JPanel();
+        JPanel playCardPanel = new JPanel();
         
-        String[] columnNames = {"",
-                "Learning",
-                "Craft",
-                "Intergrety",
-                "Quality Points"};
-        
-        JTable table = new JTable(4, 5);
         
         // Nirupama /c/Nirupama/SEproject/CECS543    SEproject\CECS543\CECS_BS\src
-        Image image = new ImageIcon("C:\\Nirupama\\SEproject\\CECS543\\CECS_BS\\src\\com\\drawable\\CSULBMap3.png").getImage();
+        //Image image = new ImageIcon("C:\\Nirupama\\SEproject\\CECS543\\CECS_BS\\src\\com\\drawable\\CSULBMap3.png").getImage();
         //Kevin  
-        //  Image image = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/CSULBMap3.png").getImage();
+        Image image = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/CSULBMap3.png").getImage();
+        
+        JButton drawCardButton = new  JButton("Draw Card");
+        JButton moveButton = new  JButton("    Move   ");
+        JButton playCardButton = new  JButton("Play Card");
+     
+        JTable table = new JTable(4, 5);
+        
         
         JLabel jl = new JLabel(new ImageIcon(image));
         
@@ -48,23 +43,13 @@ public class Test1 {
         
         JLabel label3 = new JLabel("Deeksha");
         label3.setForeground(Color.blue);
-        
-        //label1.setSize(150, 150);
-        //label1.setOpaque(false);
-       // label1.setLocation(1200, 400);
+
        //names
-        frame.add(bottomPanel);
+        frame.add(upperPanel);
         //DrawCard, Move, PlayCard buttons
-        frame.add(buttonPanel1);
-        
-        
-        buttonPanel1.add(drawCardButton);
-        buttonPanel1.add(moveButton);
-        buttonPanel1.add(playCardButton);
-        buttonPanel1.add(table);
-       // frame.add(jl);
-        
-        bottomPanel.add(jl);
+        frame.add(bottomPanel);
+        upperPanel.add(jl);
+       
         jl.add(panel1);
         jl.add(panel2);
         jl.add(panel3);
@@ -77,43 +62,51 @@ public class Test1 {
         panel2.setBounds(0, 1420, 1750, 1420);
         panel2.add(label2);
         //Dee
-        panel3.setOpaque(false);
-        panel3.setBounds(0, 1470, 1750, 1420);
-        panel3.add(label3);
+       panel3.setOpaque(false);
+       panel3.setBounds(0, 1470, 1750, 1420);
+       panel3.add(label3);
         
-        //Image image = new ImageIcon("C:\\Users\\vishalvibhandik\\workspace\\CECS_BS\\src\\CSULBMap3.png").getImage();
-        
-        
+       JScrollPane scrollPane = new JScrollPane(upperPanel);
+       scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+       scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+       scrollPane.setBounds(0, 0, 1280, 500);
+      
+       drawCardPanel.setPreferredSize(new Dimension(10,10));
+       drawCardPanel.setBackground(Color.black);
+       drawCardPanel.add(drawCardButton);
+       bottomPanel.add(drawCardPanel);
 
+       moveCardPanel.add(moveButton);
+       bottomPanel.add(moveCardPanel);
        
-        JScrollPane scrollPane = new JScrollPane(bottomPanel);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setBounds(0, 0, 1280, 500);
+       playCardPanel.add(playCardButton);
+       bottomPanel.add(playCardPanel);
        
-        
-       JScrollPane buttonPane1 = new JScrollPane(buttonPanel1);
-       buttonPane1.setBounds(0, 500, 1280, 800);
+      // bottomPanel.add(table);
+       
+       JScrollPane buttonPane1 = new JScrollPane(drawCardPanel);
+       buttonPane1.setBounds(10, 500, 150, 45);
+       buttonPane1.setBorder(null);
      
+       JScrollPane buttonPane2 = new JScrollPane(moveCardPanel);
+       buttonPane2.setBounds(10, 537, 150, 45);
+       buttonPane2.setBorder(null);
        
-     //  buttonPane1.add(moveButton, 2);
+       JScrollPane buttonPane3 = new JScrollPane(playCardPanel);
+       buttonPane3.setBounds(10, 573, 150, 45);
+       buttonPane3.setBorder(null);
        
-
-     
-        JPanel contentPane = new JPanel(null);
-        contentPane.setPreferredSize(new Dimension(1900, 1080));
-        contentPane.add(scrollPane);
-        contentPane.add(buttonPane1);
-       // contentPane.add(tablePane);
-
-        
-                       
-        
-        
-        frame.setContentPane(contentPane);
-        frame.pack();
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
+       JPanel contentPane = new JPanel(null);
+       contentPane.setPreferredSize(new Dimension(1900, 1080));
+       contentPane.add(scrollPane);
+       contentPane.add(buttonPane1);
+       contentPane.add(buttonPane2);
+       contentPane.add(buttonPane3);
+       
+       frame.setContentPane(contentPane);
+       frame.pack();
+       frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+       frame.setVisible(true);
 
 	}
 
