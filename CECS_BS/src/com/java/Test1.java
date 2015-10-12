@@ -2,28 +2,54 @@ package com.java;
 import javax.swing.*;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 
-public class Test1 {
+public class Test1  {
 	public static void main(String[] args) {
-		JFrame frame = new JFrame();
+		
+		Test1 obj= new Test1();
+	}
+	
+	private String selectedMove= "";
+	private JLabel label1 = new JLabel("Niru");
+	private JPanel panel1 = new JPanel();
+	  
+	private JPanel panel2 = new JPanel();
+	private JPanel panel3 = new JPanel();
+    
+	private  JPanel upperPanel = new JPanel();
+	private  JPanel bottomPanel = new JPanel();
+    
+	private   JPanel buttonPanel = new JPanel();
+	private JPanel JListPanel = new JPanel();
+	private List moveList = new List();
+	private JFrame frame = new JFrame();
+	private List movePlayedList = new List();
+	
+	private  JButton drawCardButton = new  JButton("Draw Card");
+	private  JButton moveButton = new  JButton("    Move   ");
+	private  JButton playCardButton = new  JButton("Play Card");
+   
+	private JTable table = new JTable(4, 5);
+      
+	private JLabel cardsInDeck = new JLabel("Cards in Deck: ");
+	private JLabel cardsInDeckValue = new JLabel("43");
+	private JLabel discardedCards = new JLabel("Discarded Cards: ");
+	private JLabel discardedCardsValue = new JLabel("0");
+	private JLabel currentState = new JLabel("You, Nirupama and Deeksha are in ECS 308.");
+		public Test1(){
+		
+		
 		
 		//For the names
-        JPanel panel1 = new JPanel();
-        JPanel panel2 = new JPanel();
-        JPanel panel3 = new JPanel();
+      
+        moveList.add("South Hall");
+    //    moveList.add("ECS 302");
         
-        JPanel upperPanel = new JPanel();
-        JPanel bottomPanel = new JPanel();
-        
-        JPanel buttonPanel = new JPanel();
-        JPanel JListPanel = new JPanel();
-        List moveList = new List();
-        moveList.add("Brautman Hall");
-        moveList.add("ECS 302");
-        
-        List movePlayedList = new List();
+       
         movePlayedList.add("Human Player is Kevin");
         movePlayedList.add("Human Player is Nirupama");
         movePlayedList.add("Human Player is Deeksha");
@@ -38,17 +64,13 @@ public class Test1 {
         Image image = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/CSULBMap3.png").getImage();
         Image card1 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/Card1.png").getImage();
        
-        JButton drawCardButton = new  JButton("Draw Card");
-        JButton moveButton = new  JButton("    Move   ");
-        JButton playCardButton = new  JButton("Play Card");
-     
-        JTable table = new JTable(4, 5);
+      
         
         JLabel jl = new JLabel(new ImageIcon(image));
         JLabel card1Label = new JLabel(new ImageIcon(card1));
         
         Color customColor = new Color(125,125,235);
-        JLabel label1 = new JLabel("Niru");
+        
         label1.setFont (label1.getFont ().deriveFont (20.0f));
         label1.setForeground(customColor);
         
@@ -63,11 +85,7 @@ public class Test1 {
         label3.setForeground(customColor);
         
 
-        JLabel cardsInDeck = new JLabel("Cards in Deck: ");
-        JLabel cardsInDeckValue = new JLabel("43");
-        JLabel discardedCards = new JLabel("Discarded Cards: ");
-        JLabel discardedCardsValue = new JLabel("0");
-        JLabel currentState = new JLabel("You, Nirupama and Deeksha are in ECS 308.");
+       
         
 
        //names
@@ -99,12 +117,14 @@ public class Test1 {
       
      //  buttonPanel.setPreferredSize(new Dimension(22,22));
        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
-       
+       moveButton.addActionListener(new MoveButtonClass());
        buttonPanel.add(drawCardButton);
        buttonPanel.add(moveButton);
+       
        buttonPanel.add(playCardButton);
       
      //  JListPanel.setBounds(10, 200, 200, 200);
+       moveList.addActionListener(new SelectedMoveClass());
        moveList.setBounds(0, 0, 100, 200);
        JListPanel.add(moveList);
       
@@ -178,5 +198,32 @@ public class Test1 {
        frame.setVisible(true);
 
 	}
-
+	
+	 class MoveButtonClass implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String movePressed = e.getActionCommand().toString();
+			System.out.println(movePressed);
+			panel1.setBounds(200, 1200, 1750, 1420);
+			moveList.removeAll();
+			moveList.add("East Walkway");
+			moveList.add("North Hall");
+			moveList.add("ECS 302");
+			moveList.add("ECS 308");
+			moveList.add("Eat Club");
+			moveList.add("Conference");
+			moveList.add("Noisy Room");
+			 
+		}	
+	}
+	 
+	 
+	 class SelectedMoveClass implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String movePressed = e.getActionCommand().toString();
+				System.out.println(movePressed);
+				selectedMove=movePressed;
+			}	
+		}	 
 }
