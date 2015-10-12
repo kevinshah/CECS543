@@ -58,7 +58,7 @@ public class Test1 {
         label2.setForeground(customColor);
         
         customColor = new Color(255,0,255);
-        JLabel label3 = new JLabel("Deeksha");
+        JLabel label3 = new JLabel("Ms. Bhosale");
         label3.setFont (label3.getFont ().deriveFont (20.0f));
         label3.setForeground(customColor);
         
