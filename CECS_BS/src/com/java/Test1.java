@@ -50,9 +50,9 @@ public class Test1  {
     //    moveList.add("ECS 302");
         
        
-        movePlayedList.add("Human Player is Kevin");
+        movePlayedList.add("AI Player is Kevin");
         movePlayedList.add("Human Player is Nirupama");
-        movePlayedList.add("Human Player is Deeksha");
+        movePlayedList.add("AI Player is Deeksha");
         
         
         JPanel cardPanel = new JPanel();
