@@ -213,6 +213,7 @@ public class Test1  {
 			moveList.add("Eat Club");
 			moveList.add("Conference");
 			moveList.add("Noisy Room");
+			currentState.setText("Human Player Niru moved to South Hall.");
 			 
 		}	
 	}
