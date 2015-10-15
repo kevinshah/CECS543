@@ -47,7 +47,7 @@ String column[]={" ","Learning","Craft","Integrity","Quality Points"};
 	private JLabel cardsInDeckValue = new JLabel("43");
 	private JLabel discardedCards = new JLabel("Discarded Cards: ");
 	private JLabel discardedCardsValue = new JLabel("0");
-	private JLabel currentState = new JLabel("You, Nirupama and Deeksha are in ECS 308.");
+	private JLabel currentState = new JLabel("You, Niru and Deeksha are in ECS 308.");
 	/*****************************************************************************************/
 	 String currentPlayer;
 	 
@@ -62,7 +62,7 @@ String column[]={" ","Learning","Craft","Integrity","Quality Points"};
 		
 		
 		//For the names
-      playersList.add("Nirupama");
+      playersList.add("Niru");
       playersList.add("Kevin");
       playersList.add("Deeksha");
         movesList.add("South Hall");
@@ -567,15 +567,16 @@ String column[]={" ","Learning","Craft","Integrity","Quality Points"};
          tempMove = numGen(movesList3.getItemCount());
          tempMove--;
          globalSelectedRoom3=movesList3.getItem(tempMove);
-     aI3Move();
+     thirdAIMove();
          tempMove = numGen(movesList2.getItemCount());
          tempMove--;
          globalSelectedRoom2=movesList2.getItem(tempMove);
-     aI2Move();
+     secondAIMove();
          
      }
      
-	 public void aI2Move(){
+	 public void secondAIMove(){
+		 System.out.println("In second AI moved");
          if(globalSelectedRoom2.equalsIgnoreCase("South Hall")){
          System.out.println("Inside South Hall");
             panel2.setBounds(200,1150,1900,1320);
@@ -864,9 +865,9 @@ String column[]={" ","Learning","Craft","Integrity","Quality Points"};
          
      }
      
-     public void aI3Move(){
+     public void thirdAIMove(){
          
-         
+    	 System.out.println("In third AI moved");
          if(globalSelectedRoom3.equalsIgnoreCase("South Hall")){
         System.out.println("Inside South Hall");
            panel3.setBounds(60,1200,1900,1320);
