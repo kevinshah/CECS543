@@ -362,7 +362,7 @@ String column[]={" ","Learning","Craft","Integrity","Quality Points"};
 	        availableMoveListHuman.add("Student Parking");
 	        availableMoveListHuman.add("George Allen Field");
 	        availableMoveListHuman.add("Walter Pyramid");
-	        availableMoveListHuman.add("Student Parking");
+	       // availableMoveListHuman.add("Student Parking");
 	        availableMoveListHuman.add("West Walkway");
 	        
 	        currentState.setText("You are " + currentPlayer + " and You are in Rec Center");
