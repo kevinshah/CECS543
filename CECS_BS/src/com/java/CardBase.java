@@ -24,7 +24,6 @@ public abstract class CardBase {
 					break;
 				}
 			}
-
 		}
 		
 		return isValid;

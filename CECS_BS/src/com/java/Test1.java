@@ -25,9 +25,7 @@ import javax.swing.table.TableColumnModel;
 public class Test1 {
 
     public static void main(String[] args) {
-
-    	Test1 gb = new Test1();
-        List locallist= new List();
+    	List locallist= new List();
         try {
         	locallist.add("1");
         	locallist.add("2");
@@ -41,9 +39,9 @@ public class Test1 {
         }
     }
     private JPanel panelPlayer1 = new JPanel();
-    private String globalSelectedRoom = "";
-    private String globalSelectedRoom2 = "South Hall"; // Because the first move of all the players is South Hall
-    private String globalSelectedRoom3 = "South Hall";
+    private String gSelRoom = "";
+    private String gSelRoom2 = "South Hall"; // Because the first move of all the players is South Hall
+    private String gSelRoom3 = "South Hall";
     private ImageIcon imageCard ;
     private JLabel labelCard;
     private List DiscardedCardDeck = new List();
@@ -53,7 +51,7 @@ public class Test1 {
     private List playerThreeDeck = new List();
     private JButton moveButton = new JButton("Move");
     String[] PlayerName = {"Kevin", "Niru", "Deeksha"};
-  //  String[] RoomNames = {"Brotman Hall", "ECS 302", "ECS 308", "Elevators", "South Hall", "Lactation Lounge", "Room of Retirement", "East Walkway", "LA5", "Library", "West Walkway", "North Hall", "Computer Lab", "Eat Club", "CECS Conference Room", "Forbidden Parking", "Rec Center", "Student Parking", "Walter Pyramid", "Japanese Garden", "George Allen Field"};
+    String[] RoomNames = {"Brotman Hall", "ECS 302", "ECS 308", "Elevators", "South Hall", "Lactation Lounge", "Room of Retirement", "East Walkway", "LA5", "Library", "West Walkway", "North Hall", "Computer Lab", "Eat Club", "CECS Conference Room", "Forbidden Parking", "Rec Center", "Student Parking", "Walter Pyramid", "Japanese Garden", "George Allen Field"};
     //private ArrayList<RoomCoordinates> = new ArrayList<RoomCoordinates>();
     List movesList = new List();
     List movesList2 = new List();
@@ -99,7 +97,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         }
         
         for(int p=0; p < deckArr.length; p++){
-            System.out.println("commonDeck: "+commonDeck.getItem(p));
+    //        System.out.println("commonDeck: "+commonDeck.getItem(p));
         }
         
         playerOneDeck.add(commonDeck.getItem(0));
@@ -159,7 +157,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 }
                 labelCard.setIcon(imageCard);
                 cardCnt++;
-                System.out.println("you have clicked image");
+       //         System.out.println("you have clicked image");
             }
         });
         JFrame frame = new JFrame();
@@ -175,21 +173,21 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         hPlayer.setIntegrityChip(2);
         hPlayer.setLearningChip(2);
         hPlayer.setCurrentLocation("ECS 308");
-        hPlayer.setQualityPoints(6);
+        hPlayer.setQualityPoints(0);
 
         a1Player.setChosenLabel("Niru");
         a1Player.setCraftChip(0);
         a1Player.setIntegrityChip(4);
         a1Player.setLearningChip(2);
         a1Player.setCurrentLocation("ECS 308");
-        a1Player.setQualityPoints(6);
+        a1Player.setQualityPoints(0);
 
         a2Player.setChosenLabel("Deeksha");
-        a2Player.setCraftChip(0);
+        a2Player.setCraftChip(1);
         a2Player.setIntegrityChip(2);
-        a2Player.setLearningChip(4);
+        a2Player.setLearningChip(3);
         a2Player.setCurrentLocation("ECS 308");
-        a2Player.setQualityPoints(6);
+        a2Player.setQualityPoints(0);
 
         
         customColor = new Color(255,0,255);
@@ -199,25 +197,25 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             playerTwoLabel.setText("Kevin");
         
         
-        hPlayer.setCraftChip(0);
-        hPlayer.setIntegrityChip(4);
+        hPlayer.setCraftChip(2);
+        hPlayer.setIntegrityChip(2);
         hPlayer.setLearningChip(2);
         hPlayer.setCurrentLocation("ECS 308");
-        hPlayer.setQualityPoints(6);
+        hPlayer.setQualityPoints(0);
 
         a1Player.setChosenLabel("Kevin");
-        a1Player.setCraftChip(2);
+        a1Player.setCraftChip(1);
         a1Player.setIntegrityChip(2);
-        a1Player.setLearningChip(2);
+        a1Player.setLearningChip(3);
         a1Player.setCurrentLocation("ECS 308");
-        a1Player.setQualityPoints(6);
+        a1Player.setQualityPoints(0);
 
         a2Player.setChosenLabel("Deeksha");
-        a2Player.setCraftChip(0);
-        a2Player.setIntegrityChip(2);
-        a2Player.setLearningChip(4);
+        a2Player.setCraftChip(3);
+        a2Player.setIntegrityChip(3);
+        a2Player.setLearningChip(2);
         a2Player.setCurrentLocation("ECS 308");
-        a2Player.setQualityPoints(6);
+        a2Player.setQualityPoints(0);
 
         }
         customColor = new Color(125,125,235);
@@ -227,23 +225,23 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             playerThreeLabel.setText("Kevin");
         hPlayer.setCraftChip(0);
         hPlayer.setIntegrityChip(2);
-        hPlayer.setLearningChip(4);
+        hPlayer.setLearningChip(2);
         hPlayer.setCurrentLocation("ECS 308");
-        hPlayer.setQualityPoints(6);
+        hPlayer.setQualityPoints(0);
 
         a1Player.setChosenLabel("Niru");
         a1Player.setCraftChip(0);
         a1Player.setIntegrityChip(4);
         a1Player.setLearningChip(2);
         a1Player.setCurrentLocation("ECS 308");
-        a1Player.setQualityPoints(6);
+        a1Player.setQualityPoints(0);
 
         a2Player.setChosenLabel("Kevin");
         a2Player.setCraftChip(2);
         a2Player.setIntegrityChip(2);
         a2Player.setLearningChip(2);
         a2Player.setCurrentLocation("ECS 308");
-        a2Player.setQualityPoints(6);
+        a2Player.setQualityPoints(0);
 
         }
 
@@ -283,13 +281,13 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
 
         cardButton.setOpaque(false);
         cardButton.setBounds(10, 10, 110, 33);
-        cardButton.addActionListener(new DrawButtonListner());
+        cardButton.addActionListener(new cardDrawBB());
         bottomLabel.add(cardButton);
 
         moveButton.setOpaque(false);
         moveButton.setBounds(10, 47, 110, 33);
         moveButton.setEnabled(false);
-        moveButton.addActionListener(new MoveButtonListner());
+        moveButton.addActionListener(new moveBB());
         bottomLabel.add(moveButton);
 
         playButton.setOpaque(false);
@@ -317,16 +315,16 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         bottomLabel.add(cardsCount);
         bottomLabel.setBackground(Color.LIGHT_GRAY);
         cardsCountValue.setOpaque(false);
-        cardsCountValue.setBounds(690, 130, 40, 10);
+        cardsCountValue.setBounds(694, 130, 40, 10);
         cardsCountValue.setBackground(Color.LIGHT_GRAY);
         bottomLabel.add(cardsCountValue);
 
         discardsCount.setOpaque(false);
-        discardsCount.setBounds(800, 130, 120, 10);
+        discardsCount.setBounds(800, 130, 220, 10);
         discardsCount.setBackground(Color.LIGHT_GRAY);
         bottomLabel.add(discardsCount);
         discardsCountValue.setOpaque(false);
-        discardsCountValue.setBounds(920, 130, 40, 10);
+        discardsCountValue.setBounds(930, 130, 130, 14);
         bottomLabel.add(discardsCountValue);
 
         currentState.setOpaque(false);
@@ -380,18 +378,18 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            globalSelectedRoom = e.getActionCommand().toString();
-            System.out.println("Selcted room: " + globalSelectedRoom);
+            gSelRoom = e.getActionCommand().toString();
+        //    System.out.println("Selcted room: " + gSelRoom);
 
             moveButton.setEnabled(true);
         }
     }
 
-    class DrawButtonListner implements ActionListener {
+    class cardDrawBB implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("U have clicked Draw card button");
+        //    System.out.println("U have clicked Draw card button");
         cardButton.setEnabled(false); 
         moveButton.setEnabled(true);
         playButton.setEnabled(true);
@@ -403,7 +401,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         
     }
     
-    class MoveButtonListner implements ActionListener {
+    class moveBB implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -412,9 +410,9 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 moveButton.setEnabled(false);
             }
             playButton.setEnabled(true);
-            hPlayer.setCurrentLocation(globalSelectedRoom);
-            if (globalSelectedRoom.equalsIgnoreCase("South Hall")) {
-                System.out.println("Inside South Hall");
+            hPlayer.setCurrentLocation(gSelRoom);
+            if (gSelRoom.equalsIgnoreCase("South Hall")) {
+            //    System.out.println("Inside South Hall");
                 panelPlayer1.setBounds(200, 1200, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -428,8 +426,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are " + currentPlayer + " and You are in South Hall");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("ECS 302")) {
-                System.out.println("Inside ECS 302 room");
+            if (gSelRoom.equalsIgnoreCase("ECS 302")) {
+          //      System.out.println("Inside ECS 302 room");
                 panelPlayer1.setBounds(0, 1000, 1750, 1000);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -438,8 +436,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in ECS 302");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Eat Club")) {
-                System.out.println("Inside Eat Club");
+            if (gSelRoom.equalsIgnoreCase("Eat Club")) {
+           //     System.out.println("Inside Eat Club");
                 panelPlayer1.setBounds(200, 900, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -447,8 +445,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Eat Club");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("CECS Conference Room")) {
-                System.out.println("Inside CECS Conference Room");
+            if (gSelRoom.equalsIgnoreCase("CECS Conference Room")) {
+           //     System.out.println("Inside CECS Conference Room");
                 panelPlayer1.setBounds(350, 900, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -457,8 +455,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in CECS Conference Room");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Lactation Lounge")) {
-                System.out.println("Inside Lactation Lounge");
+            if (gSelRoom.equalsIgnoreCase("Lactation Lounge")) {
+             //   System.out.println("Inside Lactation Lounge");
                 panelPlayer1.setBounds(400, 1400, 1900, 1320);
                 panelPlayer1.repaint();
 
@@ -468,8 +466,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Lactation Lounge");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("ECS 308")) {
-                System.out.println("Inside ECS 308");
+            if (gSelRoom.equalsIgnoreCase("ECS 308")) {
+            //    System.out.println("Inside ECS 308");
                 panelPlayer1.setBounds(0, 1320, 1750, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -477,8 +475,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in ECS 308");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("East Walkway")) {
-                System.out.println("Inside East Walkway");
+            if (gSelRoom.equalsIgnoreCase("East Walkway")) {
+           //     System.out.println("Inside East Walkway");
                 panelPlayer1.setBounds(580, 1100, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -488,8 +486,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in East Walkway");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Brotman Hall")) {
-                System.out.println("Inside Brotman Hall");
+            if (gSelRoom.equalsIgnoreCase("Brotman Hall")) {
+             //   System.out.println("Inside Brotman Hall");
                 panelPlayer1.setBounds(300, 1800, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -498,8 +496,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Brotman Hall");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Forbidden Parking")) {
-                System.out.println("Inside Forbidden Parking");
+            if (gSelRoom.equalsIgnoreCase("Forbidden Parking")) {
+           //     System.out.println("Inside Forbidden Parking");
                 panelPlayer1.setBounds(350, 700, 1900, 1320);
                 panelPlayer1.repaint();
 
@@ -511,8 +509,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Forbidden Parking");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Rec Center")) {
-                System.out.println("Inside Rec Center");
+            if (gSelRoom.equalsIgnoreCase("Rec Center")) {
+           //     System.out.println("Inside Rec Center");
                 panelPlayer1.setBounds(-150, 700, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -524,8 +522,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Rec Center");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Student Parking")) {
-                System.out.println("Inside Student Parking");
+            if (gSelRoom.equalsIgnoreCase("Student Parking")) {
+         //       System.out.println("Inside Student Parking");
                 panelPlayer1.setBounds(350, 350, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -536,8 +534,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Student Parking");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Walter Pyramid")) {
-                System.out.println("Inside Walter Pyramid");
+            if (gSelRoom.equalsIgnoreCase("Walter Pyramid")) {
+           //     System.out.println("Inside Walter Pyramid");
                 panelPlayer1.setBounds(-350, 350, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -549,8 +547,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Walter Pyramid");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Japanese Garden")) {
-                System.out.println("Inside Japanese Garden");
+            if (gSelRoom.equalsIgnoreCase("Japanese Garden")) {
+         //       System.out.println("Inside Japanese Garden");
                 panelPlayer1.setBounds(-350, 150, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -560,8 +558,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Japanese Garden");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("George Allen Field")) {
-                System.out.println("Inside George Allen Field");
+            if (gSelRoom.equalsIgnoreCase("George Allen Field")) {
+         //       System.out.println("Inside George Allen Field");
                 panelPlayer1.setBounds(-750, 70, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -572,8 +570,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in George Allen Field");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("West Walkway")) {
-                System.out.println("Inside West Walkway");
+            if (gSelRoom.equalsIgnoreCase("West Walkway")) {
+        //        System.out.println("Inside West Walkway");
                 panelPlayer1.setBounds(-850, 1200, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -583,8 +581,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in West Walkway");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("North Hall")) {
-                System.out.println("Inside North Hall");
+            if (gSelRoom.equalsIgnoreCase("North Hall")) {
+         //       System.out.println("Inside North Hall");
                 panelPlayer1.setBounds(-500, 1200, 1900, 1320);
                 panelPlayer1.repaint();
                 movesList.removeAll();
@@ -598,7 +596,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 moveButton.setEnabled(false);
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Library")) {
+            if (gSelRoom.equalsIgnoreCase("Library")) {
                 System.out.println("Inside Library");
                 panelPlayer1.setBounds(-700, 1800, 1900, 1320);
                 panelPlayer1.repaint();
@@ -608,7 +606,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Library");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Room of Retirement")) {
+            if (gSelRoom.equalsIgnoreCase("Room of Retirement")) {
                 System.out.println("Inside Room of Retirement");
                 panelPlayer1.setBounds(-700, 1400, 1900, 1320);
                 panelPlayer1.repaint();
@@ -617,7 +615,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Room of Retirement");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Computer Lab")) {
+            if (gSelRoom.equalsIgnoreCase("Computer Lab")) {
                 System.out.println("Inside Computer Lab");
                 panelPlayer1.setBounds(-700, 950, 1900, 1320);
                 panelPlayer1.repaint();
@@ -626,7 +624,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Computer Lab");
             }
             
-            if (globalSelectedRoom.equalsIgnoreCase("LA5")) {
+            if (gSelRoom.equalsIgnoreCase("LA5")) {
                 System.out.println("Inside LA5");
                 panelPlayer1.setBounds(-100, 1800, 1900, 1320);
                 panelPlayer1.repaint();
@@ -637,7 +635,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in LA5");
             }
 
-            if (globalSelectedRoom.equalsIgnoreCase("Elevators")) {
+            if (gSelRoom.equalsIgnoreCase("Elevators")) {
                 System.out.println("Inside Elevators");
                 panelPlayer1.setBounds(-300, 1400, 1900, 1320);
                 panelPlayer1.repaint();
@@ -669,30 +667,30 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Please get new cards");
                 playerOneDeck.removeAll();  
                 playerOneDeck.add(commonDeck.getItem(15));
-        playerOneDeck.add(commonDeck.getItem(16));
-        playerOneDeck.add(commonDeck.getItem(17));
-        playerOneDeck.add(commonDeck.getItem(18));
-        playerOneDeck.add(commonDeck.getItem(19));        
-        playerTwoDeck.removeAll();    
-        playerTwoDeck.add(commonDeck.getItem(20));
-            playerTwoDeck.add(commonDeck.getItem(21));
-            playerTwoDeck.add(commonDeck.getItem(22));
-            playerTwoDeck.add(commonDeck.getItem(23));
-            playerTwoDeck.add(commonDeck.getItem(24));
-            playerThreeDeck.removeAll();
-            playerThreeDeck.add(commonDeck.getItem(25));
-            playerThreeDeck.add(commonDeck.getItem(26));
-            playerThreeDeck.add(commonDeck.getItem(27));
-            playerThreeDeck.add(commonDeck.getItem(28));
-            playerThreeDeck.add(commonDeck.getItem(29));
-            }else{            
-            hPlayer=selectClass(hPlayer,Integer.parseInt(playerOneDeck.getItem(humanCount)));    
-            System.out.println("humanCount: "+humanCount);
-            scoreTable.setValueAt(""+hPlayer.getLearningChip()+"", 1, 1);
-            scoreTable.setValueAt(""+hPlayer.getCraftChip()+"", 1, 2);
-            scoreTable.setValueAt(""+hPlayer.getIntegrityChip()+"", 1, 3);
-            scoreTable.setValueAt(""+hPlayer.getQualityPoints()+"", 1, 4);
-            
+		        playerOneDeck.add(commonDeck.getItem(16));
+		        playerOneDeck.add(commonDeck.getItem(17));
+		        playerOneDeck.add(commonDeck.getItem(18));
+		        playerOneDeck.add(commonDeck.getItem(19));        
+		        playerTwoDeck.removeAll();    
+		        playerTwoDeck.add(commonDeck.getItem(20));
+	            playerTwoDeck.add(commonDeck.getItem(21));
+	            playerTwoDeck.add(commonDeck.getItem(22));
+	            playerTwoDeck.add(commonDeck.getItem(23));
+	            playerTwoDeck.add(commonDeck.getItem(24));
+	            playerThreeDeck.removeAll();
+	            playerThreeDeck.add(commonDeck.getItem(25));
+	            playerThreeDeck.add(commonDeck.getItem(26));
+	            playerThreeDeck.add(commonDeck.getItem(27));
+	            playerThreeDeck.add(commonDeck.getItem(28));
+	            playerThreeDeck.add(commonDeck.getItem(29));
+	            }else{            
+		            hPlayer=sClass(hPlayer,Integer.parseInt(playerOneDeck.getItem(humanCount)));    
+		            System.out.println("humanCount: "+humanCount);
+		            scoreTable.setValueAt(""+hPlayer.getLearningChip()+"", 1, 1);
+		            scoreTable.setValueAt(""+hPlayer.getCraftChip()+"", 1, 2);
+		            scoreTable.setValueAt(""+hPlayer.getIntegrityChip()+"", 1, 3);
+		            scoreTable.setValueAt(""+hPlayer.getQualityPoints()+"", 1, 4);
+	            
                 System.out.println("Integrity Points is: "+hPlayer.getLearningChip());
            
             if(hPlayer.isChooseQuality()){
@@ -715,26 +713,26 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
             }
             System.out.println("played");
-            System.out.println("Selcted room: " + globalSelectedRoom);
+            System.out.println("Selcted room: " + gSelRoom);
             cardButton.setEnabled(true);
             playButton.setEnabled(false);
 
             int tempMove = 1;
             tempMove = numGen(movesList3.getItemCount());
             tempMove--;
-            globalSelectedRoom3 = movesList3.getItem(tempMove);
+            gSelRoom3 = movesList3.getItem(tempMove);
             aI3Move();
-           a2Player= selectClass(a2Player,Integer.parseInt(playerTwoDeck.getItem(humanCount-1)));
-           scoreTable.setValueAt(""+a2Player.getLearningChip()+"", 3, 1);
+            a2Player= sClass(a2Player,Integer.parseInt(playerTwoDeck.getItem(humanCount-1)));
+            scoreTable.setValueAt(""+a2Player.getLearningChip()+"", 3, 1);
             scoreTable.setValueAt(""+a2Player.getCraftChip()+"", 3, 2);
             scoreTable.setValueAt(""+a2Player.getIntegrityChip()+"", 3, 3);
             scoreTable.setValueAt(""+a2Player.getQualityPoints()+"", 3, 4);
  
            tempMove = numGen(movesList2.getItemCount());
             tempMove--;
-            globalSelectedRoom2 = movesList2.getItem(tempMove);
+            gSelRoom2 = movesList2.getItem(tempMove);
             aI2Move();
-           a1Player= selectClass(a1Player,Integer.parseInt(playerThreeDeck.getItem(humanCount-1)));
+           a1Player= sClass(a1Player,Integer.parseInt(playerThreeDeck.getItem(humanCount-1)));
            scoreTable.setValueAt(""+a1Player.getLearningChip()+"", 2, 1);
             scoreTable.setValueAt(""+a1Player.getCraftChip()+"", 2, 2);
             scoreTable.setValueAt(""+a1Player.getIntegrityChip()+"", 2, 3);
@@ -750,6 +748,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             monitor=hPlayer.getQualityPoints()+a1Player.getQualityPoints()+a2Player.getQualityPoints();
             if(monitor>=60){
                 year2=true;
+                System.out.print("Next level");
             }
             discardCardVal=discardCardVal+3;
             
@@ -762,9 +761,9 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             discardsCountValue.setText(""+discardCardVal);
         }
         public void aI3Move() {
-        	a2Player.setCurrentLocation(globalSelectedRoom3);
-            if (globalSelectedRoom3.equalsIgnoreCase("South Hall")) {
-                System.out.println("Inside South Hall");
+        	a2Player.setCurrentLocation(gSelRoom3);
+            if (gSelRoom3.equalsIgnoreCase("South Hall")) {
+            //    System.out.println("Inside South Hall");
                 panelPlayer3.setBounds(60, 1200, 1900, 1320);
                 panelPlayer3.repaint();	
                 movesList3.removeAll();
@@ -778,8 +777,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
 
 
-            if (globalSelectedRoom3.equalsIgnoreCase("ECS 302")) {
-                System.out.println("Inside ECS 302 room");
+            if (gSelRoom3.equalsIgnoreCase("ECS 302")) {
+         //       System.out.println("Inside ECS 302 room");
                 panelPlayer3.setBounds(0, 950, 1750, 1000);
                 panelPlayer3.repaint();
 
@@ -788,16 +787,16 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("South Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Eat Club")) {
-                System.out.println("Inside Eat Club");
+            if (gSelRoom3.equalsIgnoreCase("Eat Club")) {
+            //    System.out.println("Inside Eat Club");
                 panelPlayer3.setBounds(200, 1000, 1900, 1320);
                 panelPlayer3.repaint();
                 movesList3.removeAll();
                 movesList3.add("South Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("CECS Conference Room")) {
-                System.out.println("Inside CECS Conference Room");
+            if (gSelRoom3.equalsIgnoreCase("CECS Conference Room")) {
+           //     System.out.println("Inside CECS Conference Room");
                 panelPlayer3.setBounds(370, 1000, 1900, 1320);
                 panelPlayer3.repaint();
 
@@ -805,24 +804,24 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("South Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Lactation Lounge")) {
-                System.out.println("Inside Lactation Lounge");
+            if (gSelRoom3.equalsIgnoreCase("Lactation Lounge")) {
+         //       System.out.println("Inside Lactation Lounge");
                 panelPlayer3.setBounds(400, 1500, 1900, 1320);
                 panelPlayer3.repaint();
                 movesList3.removeAll();
                 movesList3.add("South Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("ECS 308")) {
-                System.out.println("Inside ECS 308");
+            if (gSelRoom3.equalsIgnoreCase("ECS 308")) {
+          //      System.out.println("Inside ECS 308");
                 panelPlayer3.setBounds(0, 1420, 1750, 1420);
                 panelPlayer3.repaint();
                 movesList3.removeAll();
                 movesList3.add("South Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("East Walkway")) {
-                System.out.println("Inside East Walkway");
+            if (gSelRoom3.equalsIgnoreCase("East Walkway")) {
+           //     System.out.println("Inside East Walkway");
                 panelPlayer3.setBounds(580, 1200, 1900, 1320);
                 panelPlayer3.repaint();	
                 movesList3.removeAll();
@@ -831,8 +830,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("Forbidden Parking");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Brotman Hall")) {
-                System.out.println("Inside Brotman Hall");
+            if (gSelRoom3.equalsIgnoreCase("Brotman Hall")) {
+          //      System.out.println("Inside Brotman Hall");
                 panelPlayer3.setBounds(300, 1900, 1900, 1320);
                 panelPlayer3.repaint();
                 movesList3.removeAll();
@@ -840,8 +839,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("LA5");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Forbidden Parking")) {
-                System.out.println("Inside Forbidden Parking");
+            if (gSelRoom3.equalsIgnoreCase("Forbidden Parking")) {
+         //       System.out.println("Inside Forbidden Parking");
                 panelPlayer3.setBounds(500, 750, 1900, 1320);
                 panelPlayer3.repaint();	
                 movesList3.removeAll();
@@ -850,8 +849,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("Student Parking");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Rec Center")) {
-                System.out.println("Inside Rec Center");
+            if (gSelRoom3.equalsIgnoreCase("Rec Center")) {
+             //   System.out.println("Inside Rec Center");
                 panelPlayer3.setBounds(-150, 650, 1900, 1320);
                 panelPlayer3.repaint();
                 movesList3.removeAll();
@@ -862,8 +861,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("West Walkway");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Student Parking")) {
-                System.out.println("Inside Student Parking");
+            if (gSelRoom3.equalsIgnoreCase("Student Parking")) {
+        //        System.out.println("Inside Student Parking");
                 panelPlayer3.setBounds(350, 400, 1900, 1320);
                 panelPlayer3.repaint();	
                 movesList3.removeAll();	
@@ -873,8 +872,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("Forbidden Parking");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Walter Pyramid")) {
-                System.out.println("Inside Walter Pyramid");
+            if (gSelRoom3.equalsIgnoreCase("Walter Pyramid")) {
+        //        System.out.println("Inside Walter Pyramid");
                 panelPlayer3.setBounds(-350, 400, 1900, 1320);
                 panelPlayer3.repaint();
                 movesList3.removeAll();
@@ -885,7 +884,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("George Allen Field");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Japanese Garden")) {
+            if (gSelRoom3.equalsIgnoreCase("Japanese Garden")) {
                 System.out.println("Inside Japanese Garden");
                 panelPlayer3.setBounds(-350, 50, 1900, 1320);
                 panelPlayer3.repaint();
@@ -895,7 +894,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("George Allen Field");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("George Allen Field")) {
+            if (gSelRoom3.equalsIgnoreCase("George Allen Field")) {
                 System.out.println("Inside George Allen Field");
                 panelPlayer3.setBounds(-750, 150, 1900, 1320);
                 panelPlayer3.repaint();
@@ -906,7 +905,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("Rec Center");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("West Walkway")) {
+            if (gSelRoom3.equalsIgnoreCase("West Walkway")) {
                 System.out.println("Inside West Walkway");
                 panelPlayer3.setBounds(-850, 1100, 1900, 1320);
                 panelPlayer3.repaint();
@@ -916,7 +915,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("Library");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("North Hall")) {
+            if (gSelRoom3.equalsIgnoreCase("North Hall")) {
                 System.out.println("Inside North Hall");
                 panelPlayer3.setBounds(-300, 1200, 1900, 1320);
                 panelPlayer3.repaint();
@@ -930,7 +929,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 moveButton.setEnabled(false);
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Library")) {
+            if (gSelRoom3.equalsIgnoreCase("Library")) {
                 System.out.println("Inside Library");
                 panelPlayer3.setBounds(-700, 1900, 1900, 1320);
                 panelPlayer3.repaint();
@@ -939,7 +938,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("LA5");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Room of Retirement")) {
+            if (gSelRoom3.equalsIgnoreCase("Room of Retirement")) {
                 System.out.println("Inside Room of Retirement");
                 panelPlayer3.setBounds(-550, 1450, 1900, 1320);
                 panelPlayer3.repaint();
@@ -948,7 +947,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("North Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Computer Lab")) {
+            if (gSelRoom3.equalsIgnoreCase("Computer Lab")) {
                 System.out.println("Inside Computer Lab");
                 panelPlayer3.setBounds(-700, 900, 1900, 1320);
                 panelPlayer3.repaint();	
@@ -957,7 +956,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
 
 
-            if (globalSelectedRoom3.equalsIgnoreCase("LA5")) {
+            if (gSelRoom3.equalsIgnoreCase("LA5")) {
                 System.out.println("Inside LA5");
                 panelPlayer3.setBounds(-100, 1900, 1900, 1320);
                 panelPlayer3.repaint();	
@@ -967,7 +966,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList3.add("Brotman Hall");
             }
 
-            if (globalSelectedRoom3.equalsIgnoreCase("Elevators")) {
+            if (gSelRoom3.equalsIgnoreCase("Elevators")) {
                 System.out.println("Inside Elevators");
                 panelPlayer3.setBounds(-280, 1500, 1900, 1320);
                 panelPlayer3.repaint();
@@ -980,8 +979,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
         }
         public void aI2Move() { 
-            a1Player.setCurrentLocation(globalSelectedRoom2); 
-            if (globalSelectedRoom2.equalsIgnoreCase("South Hall")) {
+            a1Player.setCurrentLocation(gSelRoom2); 
+            if (gSelRoom2.equalsIgnoreCase("South Hall")) {
                 System.out.println("Inside South Hall");
                 panelPlayer2.setBounds(200, 1150, 1900, 1320);
                 panelPlayer2.repaint();	
@@ -996,7 +995,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
 
 
-            if (globalSelectedRoom2.equalsIgnoreCase("ECS 302")) {
+            if (gSelRoom2.equalsIgnoreCase("ECS 302")) {
                 System.out.println("Inside ECS 302 room");
                 panelPlayer2.setBounds(0, 1050, 1750, 1000);
                 panelPlayer2.repaint();
@@ -1008,7 +1007,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 // currentState.setText("You are" + currentPlayer + " and You are in ECS 302");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Eat Club")) {
+            if (gSelRoom2.equalsIgnoreCase("Eat Club")) {
                 System.out.println("Inside Eat Club");
                 panelPlayer2.setBounds(200, 950, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1016,7 +1015,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("South Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("CECS Conference Room")) {
+            if (gSelRoom2.equalsIgnoreCase("CECS Conference Room")) {
                 System.out.println("Inside CECS Conference Room");
                 panelPlayer2.setBounds(370, 950, 1900, 1320);
                 panelPlayer2.repaint();	
@@ -1024,7 +1023,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("South Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Lactation Lounge")) {
+            if (gSelRoom2.equalsIgnoreCase("Lactation Lounge")) {
                 System.out.println("Inside Lactation Lounge");
                 panelPlayer2.setBounds(400, 1450, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1032,7 +1031,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("South Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("ECS 308")) {
+            if (gSelRoom2.equalsIgnoreCase("ECS 308")) {
                 System.out.println("Inside ECS 308");
                 panelPlayer2.setBounds(0, 1370, 1750, 13270);
                 panelPlayer2.repaint();
@@ -1041,7 +1040,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("South Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("East Walkway")) {
+            if (gSelRoom2.equalsIgnoreCase("East Walkway")) {
                 System.out.println("Inside East Walkway");
                 panelPlayer2.setBounds(580, 1150, 1900, 1320);
                 panelPlayer2.repaint();	
@@ -1051,7 +1050,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("Forbidden Parking");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Brotman Hall")) {
+            if (gSelRoom2.equalsIgnoreCase("Brotman Hall")) {
                 System.out.println("Inside Brotman Hall");
                 panelPlayer2.setBounds(300, 1850, 1900, 1320);
                 panelPlayer2.repaint();	
@@ -1060,7 +1059,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("LA5");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Forbidden Parking")) {
+            if (gSelRoom2.equalsIgnoreCase("Forbidden Parking")) {
                 System.out.println("Inside Forbidden Parking");
                 panelPlayer2.setBounds(350, 750, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1071,7 +1070,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("Student Parking");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Rec Center")) {
+            if (gSelRoom2.equalsIgnoreCase("Rec Center")) {
                 System.out.println("Inside Rec Center");
                 panelPlayer2.setBounds(-150, 750, 1900, 1320);
                 panelPlayer2.repaint();	
@@ -1083,7 +1082,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("West Walkway");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Student Parking")) {
+            if (gSelRoom2.equalsIgnoreCase("Student Parking")) {
                 System.out.println("Inside Student Parking");
                 panelPlayer2.setBounds(350, 300, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1094,7 +1093,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("Forbidden Parking");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Walter Pyramid")) {
+            if (gSelRoom2.equalsIgnoreCase("Walter Pyramid")) {
                 System.out.println("Inside Walter Pyramid");
                 panelPlayer2.setBounds(-350, 300, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1106,7 +1105,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("George Allen Field");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Japanese Garden")) {
+            if (gSelRoom2.equalsIgnoreCase("Japanese Garden")) {
                 System.out.println("Inside Japanese Garden");
                 panelPlayer2.setBounds(-350, 100, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1116,7 +1115,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("George Allen Field");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("George Allen Field")) {
+            if (gSelRoom2.equalsIgnoreCase("George Allen Field")) {
                 System.out.println("Inside George Allen Field");
                 panelPlayer2.setBounds(-750, 100, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1127,7 +1126,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("Rec Center");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("West Walkway")) {
+            if (gSelRoom2.equalsIgnoreCase("West Walkway")) {
                 System.out.println("Inside West Walkway");
                 panelPlayer2.setBounds(-850, 1150, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1137,7 +1136,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("Library");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("North Hall")) {
+            if (gSelRoom2.equalsIgnoreCase("North Hall")) {
                 System.out.println("Inside North Hall");
                 panelPlayer2.setBounds(-400, 1200, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1151,7 +1150,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 moveButton.setEnabled(false);
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Library")) {
+            if (gSelRoom2.equalsIgnoreCase("Library")) {
                 System.out.println("Inside Library");
                 panelPlayer2.setBounds(-700, 1850, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1160,7 +1159,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("LA5");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Room of Retirement")) {
+            if (gSelRoom2.equalsIgnoreCase("Room of Retirement")) {
                 System.out.println("Inside Room of Retirement");
                 panelPlayer2.setBounds(-700, 1450, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1168,7 +1167,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("North Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Computer Lab")) {
+            if (gSelRoom2.equalsIgnoreCase("Computer Lab")) {
                 System.out.println("Inside Computer Lab");
                 panelPlayer2.setBounds(-700, 1000, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1176,7 +1175,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("North Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("LA5")) {
+            if (gSelRoom2.equalsIgnoreCase("LA5")) {
                 System.out.println("Inside LA5");
                 panelPlayer2.setBounds(-100, 1850, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1186,7 +1185,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList2.add("Brotman Hall");
             }
 
-            if (globalSelectedRoom2.equalsIgnoreCase("Elevators")) {
+            if (gSelRoom2.equalsIgnoreCase("Elevators")) {
                 System.out.println("Inside Elevators");
                 panelPlayer2.setBounds(-290, 1450, 1900, 1320);
                 panelPlayer2.repaint();
@@ -1198,7 +1197,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         
     }
 
-        public Player selectClass(Player player,int selectCnt){
+        public Player sClass(Player player,int selectCnt){
             
             switch(selectCnt){
                 case 1: if(year2){LBSUvsCSUCard lbsUvsCSU= new LBSUvsCSUCard(); player=lbsUvsCSU.play(player); }else{ CECS105Card6 CECS1056=new CECS105Card6();														player=CECS1056.play(player); }					break;

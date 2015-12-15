@@ -62,15 +62,11 @@ import javax.swing.JPanel;
                     	dispose();
                     }
                 });
-                
-
-                //pnall.setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
                 add(pnall);
                 
 		pnall.add(integrityPt);
 		pnall.add(learningPt);
 		pnall.add(craftPt);
-		//this.add(Box.createVerticalStrut(10));		
 		setVisible(true);
     }
 }
