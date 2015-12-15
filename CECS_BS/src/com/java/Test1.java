@@ -21,6 +21,7 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 //import java.util.Arrays;
 
+
 public class Test1 {
 
     public static void main(String[] args) {
@@ -33,9 +34,6 @@ public class Test1 {
         	locallist.add("3");
         	locallist.add("4");
         	locallist.add("5");
-        //	CardDialog objcard=new CardDialog(locallist, 0);
-       // 	ChipsDialog obj= new ChipsDialog();
-            //   obj.playMusic();
             // TODO Auto-generated method stub
         } catch (Exception ex) {
             Logger.getLogger(Test1.class.getName()).log(Level.SEVERE, null, ex);
