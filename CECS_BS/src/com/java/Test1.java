@@ -80,9 +80,9 @@ public class Test1 {
     int cardCnt = 1;
     int moveCnt=0;
     int humanCount=0;
-    Player humanPlayer= new Player(); 
-    Player playerAI1= new Player();
-    Player playerAI2= new Player();
+    Player hPlayer= new Player(); 
+    Player a1Player= new Player();
+    Player a2Player= new Player();
     Util objUtil= new Util();
     Integer[] deckArr;  
     private JTable scoreTable;
@@ -170,26 +170,26 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         customColor = new Color(51, 204, 51);
         playerOneLabel.setForeground(customColor);
 
-        humanPlayer.setChosenLabel(currentPlayer);
-        humanPlayer.setCraftChip(2);
-        humanPlayer.setIntegrityChip(2);
-        humanPlayer.setLearningChip(2);
-        humanPlayer.setCurrentLocation("ECS 308");
-        humanPlayer.setQualityPoints(6);
+        hPlayer.setChosenLabel(currentPlayer);
+        hPlayer.setCraftChip(2);
+        hPlayer.setIntegrityChip(2);
+        hPlayer.setLearningChip(2);
+        hPlayer.setCurrentLocation("ECS 308");
+        hPlayer.setQualityPoints(6);
 
-        playerAI1.setChosenLabel("Niru");
-        playerAI1.setCraftChip(0);
-        playerAI1.setIntegrityChip(4);
-        playerAI1.setLearningChip(2);
-        playerAI1.setCurrentLocation("ECS 308");
-        playerAI1.setQualityPoints(6);
+        a1Player.setChosenLabel("Niru");
+        a1Player.setCraftChip(0);
+        a1Player.setIntegrityChip(4);
+        a1Player.setLearningChip(2);
+        a1Player.setCurrentLocation("ECS 308");
+        a1Player.setQualityPoints(6);
 
-        playerAI2.setChosenLabel("Deeksha");
-        playerAI2.setCraftChip(0);
-        playerAI2.setIntegrityChip(2);
-        playerAI2.setLearningChip(4);
-        playerAI2.setCurrentLocation("ECS 308");
-        playerAI2.setQualityPoints(6);
+        a2Player.setChosenLabel("Deeksha");
+        a2Player.setCraftChip(0);
+        a2Player.setIntegrityChip(2);
+        a2Player.setLearningChip(4);
+        a2Player.setCurrentLocation("ECS 308");
+        a2Player.setQualityPoints(6);
 
         
         customColor = new Color(255,0,255);
@@ -199,25 +199,25 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             playerTwoLabel.setText("Kevin");
         
         
-        humanPlayer.setCraftChip(0);
-        humanPlayer.setIntegrityChip(4);
-        humanPlayer.setLearningChip(2);
-        humanPlayer.setCurrentLocation("ECS 308");
-        humanPlayer.setQualityPoints(6);
+        hPlayer.setCraftChip(0);
+        hPlayer.setIntegrityChip(4);
+        hPlayer.setLearningChip(2);
+        hPlayer.setCurrentLocation("ECS 308");
+        hPlayer.setQualityPoints(6);
 
-        playerAI1.setChosenLabel("Kevin");
-        playerAI1.setCraftChip(2);
-        playerAI1.setIntegrityChip(2);
-        playerAI1.setLearningChip(2);
-        playerAI1.setCurrentLocation("ECS 308");
-        playerAI1.setQualityPoints(6);
+        a1Player.setChosenLabel("Kevin");
+        a1Player.setCraftChip(2);
+        a1Player.setIntegrityChip(2);
+        a1Player.setLearningChip(2);
+        a1Player.setCurrentLocation("ECS 308");
+        a1Player.setQualityPoints(6);
 
-        playerAI2.setChosenLabel("Deeksha");
-        playerAI2.setCraftChip(0);
-        playerAI2.setIntegrityChip(2);
-        playerAI2.setLearningChip(4);
-        playerAI2.setCurrentLocation("ECS 308");
-        playerAI2.setQualityPoints(6);
+        a2Player.setChosenLabel("Deeksha");
+        a2Player.setCraftChip(0);
+        a2Player.setIntegrityChip(2);
+        a2Player.setLearningChip(4);
+        a2Player.setCurrentLocation("ECS 308");
+        a2Player.setQualityPoints(6);
 
         }
         customColor = new Color(125,125,235);
@@ -225,25 +225,25 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
 
         if (currentPlayer.equalsIgnoreCase("Deeksha")) {
             playerThreeLabel.setText("Kevin");
-        humanPlayer.setCraftChip(0);
-        humanPlayer.setIntegrityChip(2);
-        humanPlayer.setLearningChip(4);
-        humanPlayer.setCurrentLocation("ECS 308");
-        humanPlayer.setQualityPoints(6);
+        hPlayer.setCraftChip(0);
+        hPlayer.setIntegrityChip(2);
+        hPlayer.setLearningChip(4);
+        hPlayer.setCurrentLocation("ECS 308");
+        hPlayer.setQualityPoints(6);
 
-        playerAI1.setChosenLabel("Niru");
-        playerAI1.setCraftChip(0);
-        playerAI1.setIntegrityChip(4);
-        playerAI1.setLearningChip(2);
-        playerAI1.setCurrentLocation("ECS 308");
-        playerAI1.setQualityPoints(6);
+        a1Player.setChosenLabel("Niru");
+        a1Player.setCraftChip(0);
+        a1Player.setIntegrityChip(4);
+        a1Player.setLearningChip(2);
+        a1Player.setCurrentLocation("ECS 308");
+        a1Player.setQualityPoints(6);
 
-        playerAI2.setChosenLabel("Kevin");
-        playerAI2.setCraftChip(2);
-        playerAI2.setIntegrityChip(2);
-        playerAI2.setLearningChip(2);
-        playerAI2.setCurrentLocation("ECS 308");
-        playerAI2.setQualityPoints(6);
+        a2Player.setChosenLabel("Kevin");
+        a2Player.setCraftChip(2);
+        a2Player.setIntegrityChip(2);
+        a2Player.setLearningChip(2);
+        a2Player.setCurrentLocation("ECS 308");
+        a2Player.setQualityPoints(6);
 
         }
 
@@ -264,16 +264,16 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         movesList.add("South Hall");
         movesList2.add("South Hall");
         movesList3.add("South Hall");
-        movesList.addActionListener(new SelectMoveListner());
+        movesList.addActionListener(new movePlayerLL());
         ImageIcon bottomImage = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/Background.png");
         JLabel bottomLabel = new JLabel(bottomImage);
         
         
 
         String data[][] = {{"", "Learning", "Craft", "Integrity", "Quality Points"},
-            {humanPlayer.getChosenLabel(), ""+humanPlayer.getLearningChip()+"",""+""+humanPlayer.getCraftChip()+"", ""+humanPlayer.getIntegrityChip()+"", ""+""+humanPlayer.getQualityPoints()+""}, 
-            {playerAI1.getChosenLabel(), ""+playerAI1.getLearningChip()+"",""+""+playerAI1.getCraftChip()+"", ""+playerAI1.getIntegrityChip()+"", ""+""+playerAI1.getQualityPoints()+""},  
-            {playerAI2.getChosenLabel(), ""+playerAI2.getLearningChip()+"",""+""+playerAI2.getCraftChip()+"", ""+playerAI2.getIntegrityChip()+"", ""+""+playerAI2.getQualityPoints()+""},  };
+            {hPlayer.getChosenLabel(), ""+hPlayer.getLearningChip()+"",""+""+hPlayer.getCraftChip()+"", ""+hPlayer.getIntegrityChip()+"", ""+""+hPlayer.getQualityPoints()+""}, 
+            {a1Player.getChosenLabel(), ""+a1Player.getLearningChip()+"",""+""+a1Player.getCraftChip()+"", ""+a1Player.getIntegrityChip()+"", ""+""+a1Player.getQualityPoints()+""},  
+            {a2Player.getChosenLabel(), ""+a2Player.getLearningChip()+"",""+""+a2Player.getCraftChip()+"", ""+a2Player.getIntegrityChip()+"", ""+""+a2Player.getQualityPoints()+""},  };
         String column[] = {" ", "Learning", "Craft", "Integrity", "Quality Points"};
 
         scoreTable = new JTable(data, column);
@@ -376,7 +376,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         frame.setVisible(true);
     }
 
-    class SelectMoveListner implements ActionListener {
+    class movePlayerLL implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -412,7 +412,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 moveButton.setEnabled(false);
             }
             playButton.setEnabled(true);
-            humanPlayer.setCurrentLocation(globalSelectedRoom);
+            hPlayer.setCurrentLocation(globalSelectedRoom);
             if (globalSelectedRoom.equalsIgnoreCase("South Hall")) {
                 System.out.println("Inside South Hall");
                 panelPlayer1.setBounds(200, 1200, 1900, 1320);
@@ -686,30 +686,30 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             playerThreeDeck.add(commonDeck.getItem(28));
             playerThreeDeck.add(commonDeck.getItem(29));
             }else{            
-            humanPlayer=selectClass(humanPlayer,Integer.parseInt(playerOneDeck.getItem(humanCount)));    
+            hPlayer=selectClass(hPlayer,Integer.parseInt(playerOneDeck.getItem(humanCount)));    
             System.out.println("humanCount: "+humanCount);
-            scoreTable.setValueAt(""+humanPlayer.getLearningChip()+"", 1, 1);
-            scoreTable.setValueAt(""+humanPlayer.getCraftChip()+"", 1, 2);
-            scoreTable.setValueAt(""+humanPlayer.getIntegrityChip()+"", 1, 3);
-            scoreTable.setValueAt(""+humanPlayer.getQualityPoints()+"", 1, 4);
+            scoreTable.setValueAt(""+hPlayer.getLearningChip()+"", 1, 1);
+            scoreTable.setValueAt(""+hPlayer.getCraftChip()+"", 1, 2);
+            scoreTable.setValueAt(""+hPlayer.getIntegrityChip()+"", 1, 3);
+            scoreTable.setValueAt(""+hPlayer.getQualityPoints()+"", 1, 4);
             
-                System.out.println("Integrity Points is: "+humanPlayer.getLearningChip());
+                System.out.println("Integrity Points is: "+hPlayer.getLearningChip());
            
-            if(humanPlayer.isChooseQuality()){
+            if(hPlayer.isChooseQuality()){
                 ChipsDialog objQualityD = new ChipsDialog();
             
             if(objQualityD.getSp().equalsIgnoreCase("Integrity")){
                
-	        humanPlayer.setIntegrityChip(humanPlayer.getIntegrityChip()+1);
-	        scoreTable.setValueAt(""+humanPlayer.getIntegrityChip()+"", 1, 3);
+	        hPlayer.setIntegrityChip(hPlayer.getIntegrityChip()+1);
+	        scoreTable.setValueAt(""+hPlayer.getIntegrityChip()+"", 1, 3);
 	        
   
             }else if(objQualityD.getSp().equalsIgnoreCase("Learning")){
-               humanPlayer.setLearningChip(humanPlayer.getLearningChip()+1);
-                scoreTable.setValueAt(""+humanPlayer.getLearningChip()+"", 1, 1); 
+               hPlayer.setLearningChip(hPlayer.getLearningChip()+1);
+                scoreTable.setValueAt(""+hPlayer.getLearningChip()+"", 1, 1); 
             }else{
-             humanPlayer.setCraftChip(humanPlayer.getCraftChip()+1);   
-                scoreTable.setValueAt(""+humanPlayer.getCraftChip()+"", 1, 2);
+             hPlayer.setCraftChip(hPlayer.getCraftChip()+1);   
+                scoreTable.setValueAt(""+hPlayer.getCraftChip()+"", 1, 2);
             }
             
             }
@@ -724,30 +724,30 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             tempMove--;
             globalSelectedRoom3 = movesList3.getItem(tempMove);
             aI3Move();
-           playerAI2= selectClass(playerAI2,Integer.parseInt(playerTwoDeck.getItem(humanCount-1)));
-           scoreTable.setValueAt(""+playerAI2.getLearningChip()+"", 3, 1);
-            scoreTable.setValueAt(""+playerAI2.getCraftChip()+"", 3, 2);
-            scoreTable.setValueAt(""+playerAI2.getIntegrityChip()+"", 3, 3);
-            scoreTable.setValueAt(""+playerAI2.getQualityPoints()+"", 3, 4);
+           a2Player= selectClass(a2Player,Integer.parseInt(playerTwoDeck.getItem(humanCount-1)));
+           scoreTable.setValueAt(""+a2Player.getLearningChip()+"", 3, 1);
+            scoreTable.setValueAt(""+a2Player.getCraftChip()+"", 3, 2);
+            scoreTable.setValueAt(""+a2Player.getIntegrityChip()+"", 3, 3);
+            scoreTable.setValueAt(""+a2Player.getQualityPoints()+"", 3, 4);
  
            tempMove = numGen(movesList2.getItemCount());
             tempMove--;
             globalSelectedRoom2 = movesList2.getItem(tempMove);
             aI2Move();
-           playerAI1= selectClass(playerAI1,Integer.parseInt(playerThreeDeck.getItem(humanCount-1)));
-           scoreTable.setValueAt(""+playerAI1.getLearningChip()+"", 2, 1);
-            scoreTable.setValueAt(""+playerAI1.getCraftChip()+"", 2, 2);
-            scoreTable.setValueAt(""+playerAI1.getIntegrityChip()+"", 2, 3);
-            scoreTable.setValueAt(""+playerAI1.getQualityPoints()+"", 2, 4);
+           a1Player= selectClass(a1Player,Integer.parseInt(playerThreeDeck.getItem(humanCount-1)));
+           scoreTable.setValueAt(""+a1Player.getLearningChip()+"", 2, 1);
+            scoreTable.setValueAt(""+a1Player.getCraftChip()+"", 2, 2);
+            scoreTable.setValueAt(""+a1Player.getIntegrityChip()+"", 2, 3);
+            scoreTable.setValueAt(""+a1Player.getQualityPoints()+"", 2, 4);
             
-            if(humanPlayer.isDiscardCard()){
+            if(hPlayer.isDiscardCard()){
                 CardDialog objDis= new CardDialog(playerOneDeck,humanCount-1, year2);
                 playerOneDeck.remove(Integer.parseInt(objDis.getDc()));
                 humanCount++;
                 discardCardVal++;
             }
             
-            monitor=humanPlayer.getQualityPoints()+playerAI1.getQualityPoints()+playerAI2.getQualityPoints();
+            monitor=hPlayer.getQualityPoints()+a1Player.getQualityPoints()+a2Player.getQualityPoints();
             if(monitor>=60){
                 year2=true;
             }
@@ -762,7 +762,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             discardsCountValue.setText(""+discardCardVal);
         }
         public void aI3Move() {
-        	playerAI2.setCurrentLocation(globalSelectedRoom3);
+        	a2Player.setCurrentLocation(globalSelectedRoom3);
             if (globalSelectedRoom3.equalsIgnoreCase("South Hall")) {
                 System.out.println("Inside South Hall");
                 panelPlayer3.setBounds(60, 1200, 1900, 1320);
@@ -980,7 +980,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
         }
         public void aI2Move() { 
-            playerAI1.setCurrentLocation(globalSelectedRoom2); 
+            a1Player.setCurrentLocation(globalSelectedRoom2); 
             if (globalSelectedRoom2.equalsIgnoreCase("South Hall")) {
                 System.out.println("Inside South Hall");
                 panelPlayer2.setBounds(200, 1150, 1900, 1320);
