@@ -4,26 +4,27 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CECS228Card extends CardBase{
+public class CECS228Card extends CardBase {
 
-	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.ECS302Room, Constants.ECS308Room, Constants.ComputerLab));
+	List<String> validLocations = new ArrayList<String>(Arrays.asList(
+			Constants.ECS302Room, Constants.ECS308Room, Constants.ComputerLab));
+
 	@Override
 	public Player play(Player player) {
 		// TODO Auto-generated method stub
-		if(isValidLocation(player, validLocations) && 
-				checkPointsPrerequisite(Constants.IntegrityChip, player, 8)&& 
-				checkPointsPrerequisite(Constants.CraftChip, player, 8)&& 
-				checkPointsPrerequisite(Constants.LearningChip, player, 8)) {
-				player.setQualityPoints(player.getQualityPoints() + 5);
-							
+		if (isValidLocation(player, validLocations)
+				&& checkPointsPrerequisite(Constants.IntegrityChip, player, 8)
+				&& checkPointsPrerequisite(Constants.CraftChip, player, 8)
+				&& checkPointsPrerequisite(Constants.LearningChip, player, 8)) {
+			player.setQualityPoints(player.getQualityPoints() + 5);
+
 		} else {
 			player.setQualityPoints(player.getQualityPoints() - 2);
 			loseCards(player, 1);
-			
+
 		}
 		return player;
 
 	}
-		
 
 }

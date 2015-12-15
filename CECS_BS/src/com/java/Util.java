@@ -9,10 +9,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- * @author Sony
- */
 public class Util {
     
     public void fillDeck(){

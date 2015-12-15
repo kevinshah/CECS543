@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 
 public class CardDialog extends JDialog{
-    JLabel title= new JLabel("Please choose the card that you wish to discard");
+    JLabel title= new JLabel("Select a card that you think you don't need and wish to be discarded.");
     private ImageIcon imageCard1 ;
     private ImageIcon imageCard2 ;
     private ImageIcon imageCard3 ;
@@ -28,34 +28,53 @@ public class CardDialog extends JDialog{
     JLabel card4= new JLabel(imageCard2);
     JLabel card5= new JLabel(imageCard3);
     JPanel pnall= new JPanel();
+    String dc;
     
-    public CardDialog(List playerOneDeck, int cnt){
     
-    imageCard1 = new ImageIcon("D:\\piyush code\\Software Engineering\\Cards_Images\\card"+playerOneDeck.getItem(0)+".jpg");
-    imageCard2 = new ImageIcon("D:\\piyush code\\Software Engineering\\Cards_Images\\card"+playerOneDeck.getItem(1)+".jpg");
-    imageCard3 = new ImageIcon("D:\\piyush code\\Software Engineering\\Cards_Images\\card"+playerOneDeck.getItem(2)+".jpg");
-    imageCard4 = new ImageIcon("D:\\piyush code\\Software Engineering\\Cards_Images\\card"+playerOneDeck.getItem(3)+".jpg");
-    imageCard5 = new ImageIcon("D:\\piyush code\\Software Engineering\\Cards_Images\\card"+playerOneDeck.getItem(4)+".jpg");
+    
+    public String getDc() {
+		return dc;
+	}
+
+
+
+	public void setDc(String dc) {
+		this.dc = dc;
+	}
+
+
+
+	public CardDialog(List playerOneDeck, int cnt){
+    
+    imageCard1 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(0)+".jpg");
+    imageCard2 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(1)+".jpg");
+    imageCard3 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(2)+".jpg");
+    imageCard4 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(3)+".jpg");
+    imageCard5 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(4)+".jpg");
     card1= new JLabel(imageCard1);
     card2= new JLabel(imageCard2);
     card3= new JLabel(imageCard3);
     card4= new JLabel(imageCard4);
     card5= new JLabel(imageCard5);
 
-        setTitle("Discard Cards");
-		((JPanel)this.getContentPane()).setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-		setSize(1100, 330);
+        setTitle("Select a card to be discarded");
+		((JPanel)this.getContentPane()).setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+		setSize(1440, 450);
 		setResizable(false);
                 
                 card1.addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
-                    System.out.println("you have selected 1st Card to be discarded");
+                    	setDc("1");
+                    	dispose();
+                    System.out.println("You wish to discard the 1st Card.");
                     }
                 });
                 
                 card2.addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
-                    System.out.println("you have selected 2nd Card to be discarded");
+                    	setDc("2");
+                    	dispose();
+                    System.out.println("You wish to discard the 2nd Card.");
                     }
                 });
 		this.setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -63,13 +82,17 @@ public class CardDialog extends JDialog{
                 
                 card3.addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
-                    System.out.println("you have selected 3rd Card to be discarded");
+                    	setDc("3");
+                    	dispose();
+                    System.out.println("You wish to discard the 3rd Card.");
                     }
                 });
                 
                 card4.addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
-                    System.out.println("you have selected 4th Card to be discarded");
+                    	setDc("4");
+                    	dispose();
+                    System.out.println("You wish to discard the 4th Card.");
                     }
                 });
 		this.setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -77,11 +100,12 @@ public class CardDialog extends JDialog{
                 
                 card5.addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
-                    System.out.println("you have selected 5th Card to be discarded");
+                    	setDc("5");
+                    	dispose();
+                    System.out.println("You wish to discard the 5th Card.");
                     }
                 });
 
-                //pnall.setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
                 add(pnall);
                 
 		pnall.add(card1);

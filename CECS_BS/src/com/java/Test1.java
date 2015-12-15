@@ -22,15 +22,18 @@ import javax.swing.table.TableColumnModel;
 
 public class Test1 {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
     	Test1 gb = new Test1();
-     //   Test obj = new Test();
-        
+        List locallist= new List();
         try {
+        	locallist.add("1");
+        	locallist.add("2");
+        	locallist.add("3");
+        	locallist.add("4");
+        	locallist.add("5");
+        	CardDialog objcard=new CardDialog(locallist, 0);
+        	ChipsDialog obj= new ChipsDialog();
             //   obj.playMusic();
             // TODO Auto-generated method stub
         } catch (Exception ex) {
@@ -69,6 +72,7 @@ public class Test1 {
     JLabel cardsCountValue = new JLabel("35");
     JLabel discardsCount = new JLabel("Discards out of play: ");
     JLabel discardsCountValue = new JLabel("0");
+    int discardCardVal=0;
     JLabel playerOneLabel = new JLabel("Kevin");
     JLabel playerTwoLabel = new JLabel("Niru");
     JLabel playerThreeLabel = new JLabel("Deeksha");
@@ -84,11 +88,12 @@ public class Test1 {
     Integer[] deckArr;  
     private JTable scoreTable;
     Color customColor = new Color(125,125,235);
-    public Test1() {
-        
-        
-        
-    deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
+    int monitor;
+    boolean year2=false;
+    
+    public void startGame(){
+    
+deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         
         for(int p=0; p < deckArr.length; p++){
             commonDeck.add(deckArr[p].toString());
@@ -98,18 +103,6 @@ public class Test1 {
             System.out.println("commonDeck: "+commonDeck.getItem(p));
         }
         
-        
-        
-        int tempPlayer = 0;
-        tempPlayer = generator.numGenerator();
-       // tempPlayer--;
-        currentPlayer = PlayerName[tempPlayer];
-
-        System.out.println("" + currentPlayer + " is  human player");
-        
-        currentState.setText("Hello " + currentPlayer + ". The GAME BEGINS from 308");
-        
-//        use this code when all cards are ready
         playerOneDeck.add(commonDeck.getItem(0));
         playerOneDeck.add(commonDeck.getItem(1));
         playerOneDeck.add(commonDeck.getItem(2));
@@ -127,15 +120,27 @@ public class Test1 {
             playerThreeDeck.add(commonDeck.getItem(13));
             playerThreeDeck.add(commonDeck.getItem(14));
             
-imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(0) + ".jpg");
-labelCard = new JLabel(imageCard);        
-//comment this code when all the cards are ready         
-//        playerOneDeck.add("1");
-//        playerOneDeck.add("2");
-//        playerOneDeck.add("3");
-//        playerOneDeck.add("4");
-//        playerOneDeck.add("5");
+		imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(0) + ".jpg");
+		labelCard = new JLabel(imageCard);        
 
+    }
+    
+    public Test1() {
+        
+        
+        
+    	startGame();
+        
+        int tempPlayer = 0;
+        tempPlayer = generator.numGenerator();
+       // tempPlayer--;
+        currentPlayer = PlayerName[tempPlayer];
+
+        System.out.println("" + currentPlayer + "'s a human player");
+        
+        currentState.setText("Hello " + currentPlayer + ", Let the game begin. You are in ECS 308");
+        
+//        use this code when all cards are ready
         labelCard.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 
@@ -146,35 +151,17 @@ labelCard = new JLabel(imageCard);
                 imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(cardCnt) + ".jpg");
                 labelCard.setIcon(imageCard);
                 cardCnt++;
-                //take value of cardCnt from human player deck
-                             
                 System.out.println("you have clicked image");
             }
         });
-//        
-//        Integer cardNum= new Integer(1);
-//        cardNum=1;
-//        while(cardNum<41){
-//        commonDeck.add(cardNum.toString());
-//        cardNum++;
-//        }
-//        
-//        System.out.println("Cards in deck");
-//        cardNum=0;
-//        while(cardNum < 40){
-//            System.out.println("--"+commonDeck.getItem(cardNum));         
-//        cardNum++;
-//        }
         JFrame frame = new JFrame();
 
-        JTextField notes = new JTextField(currentPlayer + " is human player", 6);
+        JTextField notes = new JTextField(currentPlayer + "'s a human player", 6);
 
         playerOneLabel.setText(currentPlayer);
         customColor = new Color(51, 204, 51);
         playerOneLabel.setForeground(customColor);
-        //Font f = new Font("arial", Font.BOLD, 50);
-        //playerOneLabel.setFont(f);
-        
+
         humanPlayer.setChosenLabel(currentPlayer);
         humanPlayer.setCraftChip(2);
         humanPlayer.setIntegrityChip(2);
@@ -339,7 +326,7 @@ labelCard = new JLabel(imageCard);
         bottomLabel.add(playButton);
 
         labelCard.setOpaque(false);
-        labelCard.setBounds(190, 10, 320, 280);
+        labelCard.setBounds(190, 10, 329, 320);
         bottomLabel.add(labelCard);
 
         movesList.setBounds(10, 130, 170, 100);
@@ -395,10 +382,10 @@ labelCard = new JLabel(imageCard);
         JScrollPane scrollPane = new JScrollPane(upperPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setBounds(0, 0, 1360, 500);
+        scrollPane.setBounds(0, 0, 1440, 500);
 
         JScrollPane scrollPane2 = new JScrollPane(bottomPanel);
-        scrollPane2.setBounds(0, 500, 1360, 800);
+        scrollPane2.setBounds(0, 500, 1440, 800);
 
         JPanel contentPane = new JPanel(null);
         contentPane.setPreferredSize(new Dimension(1900, 1080));
@@ -788,11 +775,24 @@ labelCard = new JLabel(imageCard);
             scoreTable.setValueAt(""+humanPlayer.getQualityPoints()+"", 1, 4);
             
                 System.out.println("Integrity Points is: "+humanPlayer.getLearningChip());
-            if(humanPlayer.isDiscardCard()){
-                CardDialog objDis= new CardDialog(playerOneDeck,humanCount);
-            }
+           
             if(humanPlayer.isChooseQuality()){
                 ChipsDialog objQualityD = new ChipsDialog();
+            
+            if(objQualityD.getSp().equalsIgnoreCase("Integrity")){
+               
+	        humanPlayer.setIntegrityChip(humanPlayer.getIntegrityChip()+1);
+	        scoreTable.setValueAt(""+humanPlayer.getIntegrityChip()+"", 1, 3);
+	        
+  
+            }else if(objQualityD.getSp().equalsIgnoreCase("Learning")){
+               humanPlayer.setLearningChip(humanPlayer.getLearningChip()+1);
+                scoreTable.setValueAt(""+humanPlayer.getLearningChip()+"", 1, 1); 
+            }else{
+             humanPlayer.setCraftChip(humanPlayer.getCraftChip()+1);   
+                scoreTable.setValueAt(""+humanPlayer.getCraftChip()+"", 1, 2);
+            }
+            
             }
             }
             System.out.println("played");
@@ -821,131 +821,72 @@ labelCard = new JLabel(imageCard);
             scoreTable.setValueAt(""+playerAI1.getIntegrityChip()+"", 2, 3);
             scoreTable.setValueAt(""+playerAI1.getQualityPoints()+"", 2, 4);
            //humanCount++;
+            
+            if(humanPlayer.isDiscardCard()){
+                CardDialog objDis= new CardDialog(playerOneDeck,humanCount-1);
+                playerOneDeck.remove(Integer.parseInt(objDis.getDc()));
+                humanCount++;
+                discardCardVal++;
+            }
+            
+            monitor=humanPlayer.getQualityPoints()+playerAI1.getQualityPoints()+playerAI2.getQualityPoints();
+            if(monitor>=60){
+                year2=true;
+            }
+            discardCardVal=discardCardVal+3;
+            
+            if(discardCardVal>=30){
+            	discardCardVal=0;
+            	System.out.println("deal the deck again");
+            	startGame();
+            	
+            }
+            discardsCountValue.setText(""+discardCardVal);
         }
 
         public Player selectClass(Player player,int selectCnt){
             
             switch(selectCnt){
-                case 1: CECS105Card6 objCard1=new CECS105Card6();
-                        player=objCard1.play(player);
-                        break;
-                case 2: ResearchCompilersCard objCard2=new ResearchCompilersCard();
-                        player=objCard2.play(player);
-                        break;
-                case 3: Math122Card objCard3=new Math122Card();
-                        player=objCard3.play(player);
-                        break;
-                case 4: CECS174ClassCard objCard4=new CECS174ClassCard();
-                        player=objCard4.play(player);
-                        break;
-                case 5: LunchAtBratwrustHallCard objCard5=new LunchAtBratwrustHallCard();
-                        player=objCard5.play(player);
-                        break;
-                case 6: CECS100Card objCard6=new CECS100Card();
-                        player=objCard6.play(player);
-                        break;
-                case 7: ExcercisingMindAndBodyCard objCard7=new ExcercisingMindAndBodyCard();
-                        player=objCard7.play(player);
-                        break;
-                case 8: ParkingViolationCard objCard8=new ParkingViolationCard();
-                        player=objCard8.play(player);
-                        break;
-                case 9: FindingTheLabCard objCard9=new FindingTheLabCard();
-                        player=objCard9.play(player);
-                        break;
-                case 10: GoodByeProfessorCard objCard10=new GoodByeProfessorCard();
-                        player=objCard10.play(player);
-                        break;
-                case 11: EnjyoyingThePeaceCard objCard11=new EnjyoyingThePeaceCard();
-                        player=objCard11.play(player);
-                        break;
-                case 12: BuddyUpCard objCard12=new BuddyUpCard();
-                        player=objCard12.play(player);
-                        break;
-                case 13: LateForClassCard objCard13=new LateForClassCard();
-                        player=objCard13.play(player);
-                        break;
-                case 14: Physics151Card objCard14=new Physics151Card();
-                        player=objCard14.play(player);
-                        break;
-                case 15: TheBigGameCard objCard15=new TheBigGameCard();
-                        player=objCard15.play(player);
-                        break;
-                case 16: KIN253LearningRulesSoccerCard objCard16=new KIN253LearningRulesSoccerCard();
-                        player=objCard16.play(player);
-                        break;
-                case 17: Math123Card objCard17=new Math123Card();
-                        player=objCard17.play(player);
-                        break;
-                case 18: LearningNetbeansCard objCard18=new LearningNetbeansCard();
-                        player=objCard18.play(player);
-                        break;
-                case 19: ChoosingAMajorCard objCard19=new ChoosingAMajorCard();
-                        player=objCard19.play(player);
-                        break;
-                case 20: PassSoccerClassCard objCard20=new PassSoccerClassCard();
-                        player=objCard20.play(player);
-                        break;
-                case 21: ScoreAGoalCard objCard21=new ScoreAGoalCard();
-                        player=objCard21.play(player);
-                        break;
-                case 22: FallInThePondCard objCard22=new FallInThePondCard();
-                        player=objCard22.play(player);
-                        break;
-                case 23: MakeTheDeanListCard objCard23=new MakeTheDeanListCard();
-                        player=objCard23.play(player);
-                        break;
-                case 24: NewLaptopCard objCard24=new NewLaptopCard();
-                        player=objCard24.play(player);
-                        break;
-                case 25: MeetTheDeanCard objCard25=new MeetTheDeanCard();
-                        player=objCard25.play(player);
-                        break;
-                case 26: LoudBuzzingCard objCard26=new LoudBuzzingCard();
-                        player=objCard26.play(player);
-                        break;
-                case 27: ProgramCrashesCard objCard27=new ProgramCrashesCard();
-                        player=objCard27.play(player);
-                        break;
-                case 28: ProfessorEnglertCard objCard28=new ProfessorEnglertCard();
-                        player=objCard28.play(player);
-                        break;
-                case 29: PressTheRightFloorCard objCard29=new PressTheRightFloorCard();
-                        player=objCard29.play(player);
-                        break;
-                case 30: SoccerGoalieCard objCard30=new SoccerGoalieCard();
-                        player=objCard30.play(player);
-                        break;
-                case 31: ElectiveClassCard objCard31=new ElectiveClassCard();
-                        player=objCard31.play(player);
-                        break;
-                case 32: OralCommunicationCard objCard32=new OralCommunicationCard();
-                        player=objCard32.play(player);
-                        break;
-                case 33: ProfessorHoffmanCard objCard33=new ProfessorHoffmanCard();
-                        player=objCard33.play(player);
-                        break;
-                case 34: Chem111Card objCard34=new Chem111Card();
-                        player=objCard34.play(player);
-                        break;
-                case 35: TheOutPostCard objCard35=new TheOutPostCard();
-                        player=objCard35.play(player);
-                        break;
-                case 36: LearningLinuxCard objCard36=new LearningLinuxCard();
-                        player=objCard36.play(player);
-                        break;
-                case 37: MakeAFriendCard objCard37=new MakeAFriendCard();
-                        player=objCard37.play(player);
-                        break;
-                case 38: EnjoyingNatureCard objCard38=new EnjoyingNatureCard();
-                        player=objCard38.play(player);
-                        break;
-                case 39: StudentParkingCard objCard39=new StudentParkingCard();
-                        player=objCard39.play(player);
-                        break;
-                case 40: CECS100Card objCard40=new CECS100Card();
-                        player=objCard40.play(player);
-                        break;
+                case 1: if(year2){LBSUvsCSUCard lbsUvsCSU= new LBSUvsCSUCard(); player=lbsUvsCSU.play(player); }else{ CECS105Card6 CECS1056=new CECS105Card6();														player=CECS1056.play(player); }					break;
+                case 2: ResearchCompilersCard ResearchCompilers=new ResearchCompilersCard(); 							player=ResearchCompilers.play(player); 			break;
+                case 3: if(year2){CarPoolCard CarPool= new CarPoolCard(); player=CarPool.play(player); }else{ Math122Card Math122=new Math122Card();															player=Math122.play(player);} 					break;
+                case 4: if(year2){CECS274Card CECS274= new CECS274Card(); player=CECS274.play(player); }else{ CECS174ClassCard CECS174Class=new CECS174ClassCard();											player=CECS174Class.play(player);}				break;
+                case 5: LunchAtBratwrustHallCard LunchAtBratwrustHall=new LunchAtBratwrustHallCard();					player=LunchAtBratwrustHall.play(player);		break;
+                case 6: if(year2){CECS201Card CECS201= new CECS201Card(); player=CECS201.play(player); }else{ CECS100Card CECS100=new CECS100Card(); 															player=CECS100.play(player);}					break;
+                case 7: ExcercisingMindAndBodyCard ExcercisingMindAndBody=new ExcercisingMindAndBodyCard(); 			player=ExcercisingMindAndBody.play(player);		break;
+                case 8: ParkingViolationCard ParkingViolation=new ParkingViolationCard();								player=ParkingViolation.play(player);			break;
+                case 9: FindingTheLabCard FindingTheLab=new FindingTheLabCard();										player=FindingTheLab.play(player);				break;
+                case 10: GoodByeProfessorCard GoodByeProfessor=new GoodByeProfessorCard(); 								player=GoodByeProfessor.play(player);			break;
+                case 11: EnjyoyingThePeaceCard EnjyoyingThePeace=new EnjyoyingThePeaceCard(); 							player=EnjyoyingThePeace.play(player);			break;
+                case 12: if(year2){ENGL317Card ENGL317= new ENGL317Card(); player=ENGL317.play(player); }else{ BuddyUpCard BuddyUp=new BuddyUpCard();															player=BuddyUp.play(player);}					break;
+                case 13: LateForClassCard LateForClass=new LateForClassCard();											player=LateForClass.play(player);				break;
+                case 14: if(year2){PHYS152Card PHYS152= new PHYS152Card(); player=PHYS152.play(player); }else{Physics151Card Physics151=new Physics151Card(); 												player=Physics151.play(player);	}				break;
+                case 15: TheBigGameCard TheBigGame=new TheBigGameCard();												player=TheBigGame.play(player);					break;
+                case 16: if(year2){PHIL270Card PHIL270= new PHIL270Card(); player=PHIL270.play(player); }else{KIN253LearningRulesSoccerCard KIN253LearningRulesSoccer=new KIN253LearningRulesSoccerCard();	player=KIN253LearningRulesSoccer.play(player);}	break;
+                case 17: Math123Card Math123=new Math123Card();															player=Math123.play(player);					break;
+                case 18: LearningNetbeansCard LearningNetbeans=new LearningNetbeansCard();								player=LearningNetbeans.play(player);			break;
+                case 19: ChoosingAMajorCard ChoosingAMajor=new ChoosingAMajorCard();									player=ChoosingAMajor.play(player);				break;
+                case 20: if(year2){CECS228Card CECS228= new CECS228Card(); player=CECS228.play(player); }else{PassSoccerClassCard PassSoccerClass=new PassSoccerClassCard(); 								player=PassSoccerClass.play(player);}			break;
+                case 21: ScoreAGoalCard ScoreAGoal=new ScoreAGoalCard();												player=ScoreAGoal.play(player);					break;
+                case 22: FallInThePondCard FallInThePond=new FallInThePondCard();										player=FallInThePond.play(player);				break;
+                case 23: MakeTheDeanListCard MakeTheDeanList=new MakeTheDeanListCard();									player=MakeTheDeanList.play(player);			break;
+                case 24: NewLaptopCard NewLaptop=new NewLaptopCard();													player=NewLaptop.play(player);					break;
+                case 25: MeetTheDeanCard MeetTheDean=new MeetTheDeanCard();												player=MeetTheDean.play(player);				break;
+                case 26: LoudBuzzingCard LoudBuzzing=new LoudBuzzingCard();												player=LoudBuzzing.play(player);				break;
+                case 27: ProgramCrashesCard ProgramCrashes=new ProgramCrashesCard();									player=ProgramCrashes.play(player);				break;
+                case 28: ProfessorEnglertCard ProfessorEnglert=new ProfessorEnglertCard();								player=ProfessorEnglert.play(player);			break;
+                case 29: PressTheRightFloorCard PressTheRightFloor=new PressTheRightFloorCard();						player=PressTheRightFloor.play(player);			break;
+                case 30: SoccerGoalieCard SoccerGoalie=new SoccerGoalieCard();											player=SoccerGoalie.play(player);				break;
+                case 31: if(year2){CECS277Card CECS277= new CECS277Card(); player=CECS277.play(player); }else{ElectiveClassCard ElectiveClass=new ElectiveClassCard();										player=ElectiveClass.play(player);}				break;
+                case 32: if(year2){CECS285Card CECS285= new CECS285Card(); player=CECS285.play(player); }else{OralCommunicationCard OralCommunication=new OralCommunicationCard();							player=OralCommunication.play(player);}			break;
+                case 33: ProfessorHoffmanCard ProfessorHoffman=new ProfessorHoffmanCard();								player=ProfessorHoffman.play(player);			break;
+                case 34: if(year2){CECS282Card CECS282= new CECS282Card(); player=CECS282.play(player); }else{Chem111Card Chem111=new Chem111Card();															player=Chem111.play(player);}					break;
+                case 35: TheOutPostCard TheOutPost=new TheOutPostCard();												player=TheOutPost.play(player);					break;
+                case 36: LearningLinuxCard LearningLinux=new LearningLinuxCard();										player=LearningLinux.play(player);				break;
+                case 37: MakeAFriendCard MakeAFriend=new MakeAFriendCard();												player=MakeAFriend.play(player); 				break;
+                case 38: EnjoyingNatureCard EnjoyingNature=new EnjoyingNatureCard(); 									player=EnjoyingNature.play(player); 			break;
+                case 39: StudentParkingCard StudentParking = new StudentParkingCard();   								player=StudentParking.play(player);				break;
+                case 40: if(year2){HaveaSwimCard HaveaSwim= new HaveaSwimCard(); player=HaveaSwim.play(player); }else{CECS100Card CECS1001 = new CECS100Card();														player=CECS1001.play(player);}					break;
             }
             return player;
         }
