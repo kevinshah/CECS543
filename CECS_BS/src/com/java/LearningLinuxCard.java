@@ -16,6 +16,8 @@ public class LearningLinuxCard extends CardBase{
 			player.setQualityPoints(player.getQualityPoints() + 3);
 			
 			// display pop up with Learning Chip, Craft Chip and Integrity Chip to choose a chip and 
+			player.setChooseQuality(true);
+
 			// then call IncrementChipBasedonLabel() method
 			
 		} else {

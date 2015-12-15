@@ -14,7 +14,8 @@ public class TheOutPostCard extends CardBase{
 		if(isValidLocation(player, validLocations)) {
 			
 			// display pop up with Learning Chip, Craft Chip and Integrity Chip to choose a chip and 
-						// then call IncrementChipBasedonLabel() method 
+			player.setChooseQuality(true);
+			// then call IncrementChipBasedonLabel() method 
 			
 		} 
 		return player;

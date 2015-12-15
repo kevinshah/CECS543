@@ -44,13 +44,21 @@ public class CardDialog extends JDialog{
 
 
 
-	public CardDialog(List playerOneDeck, int cnt){
+	public CardDialog(List playerOneDeck, int cnt, boolean flag){
     
-    imageCard1 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(0)+".jpg");
-    imageCard2 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(1)+".jpg");
-    imageCard3 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(2)+".jpg");
-    imageCard4 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(3)+".jpg");
-    imageCard5 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(4)+".jpg");
+		if(!flag){
+		    imageCard1 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(0)+".jpg");
+		    imageCard2 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(1)+".jpg");
+		    imageCard3 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(2)+".jpg");
+		    imageCard4 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(3)+".jpg");
+		    imageCard5 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card"+playerOneDeck.getItem(4)+".jpg");
+		}else{
+			  imageCard1 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card"+playerOneDeck.getItem(0)+".jpg");
+			  imageCard2 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card"+playerOneDeck.getItem(1)+".jpg");
+			  imageCard3 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card"+playerOneDeck.getItem(2)+".jpg");
+			  imageCard4 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card"+playerOneDeck.getItem(3)+".jpg");
+			  imageCard5 = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card"+playerOneDeck.getItem(4)+".jpg");
+		}
     card1= new JLabel(imageCard1);
     card2= new JLabel(imageCard2);
     card3= new JLabel(imageCard3);

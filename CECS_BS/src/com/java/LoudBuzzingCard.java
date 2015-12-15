@@ -14,6 +14,8 @@ public class LoudBuzzingCard extends CardBase{
 				checkPointsPrerequisite(Constants.CraftChip, player, 3)) {
 			
 			// display pop up with Learning Chip, Craft Chip and Integrity Chip to choose a chip and 
+			player.setChooseQuality(true);
+
 						// then call IncrementChipBasedonLabel() method 
 		} else {
 			player.setQualityPoints(player.getQualityPoints() - 2);

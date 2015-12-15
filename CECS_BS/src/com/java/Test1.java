@@ -16,6 +16,7 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.border.MatteBorder;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 //import java.util.Arrays;
@@ -32,8 +33,8 @@ public class Test1 {
         	locallist.add("3");
         	locallist.add("4");
         	locallist.add("5");
-        	CardDialog objcard=new CardDialog(locallist, 0);
-        	ChipsDialog obj= new ChipsDialog();
+        //	CardDialog objcard=new CardDialog(locallist, 0);
+       // 	ChipsDialog obj= new ChipsDialog();
             //   obj.playMusic();
             // TODO Auto-generated method stub
         } catch (Exception ex) {
@@ -54,7 +55,7 @@ public class Test1 {
     private List playerThreeDeck = new List();
     private JButton moveButton = new JButton("Move");
     String[] PlayerName = {"Kevin", "Niru", "Deeksha"};
-    String[] RoomNames = {"Brotman Hall", "ECS 302", "ECS 308", "Elevators", "South Hall", "Lactation Lounge", "Room of Retirement", "East Walkway", "LA5", "Library", "West Walkway", "North Hall", "Computer Lab", "Eat Club", "CECS Conference Room", "Forbidden Parking", "Rec Center", "Student Parking", "Walter Pyramid", "Japanese Garden", "George Allen Field"};
+  //  String[] RoomNames = {"Brotman Hall", "ECS 302", "ECS 308", "Elevators", "South Hall", "Lactation Lounge", "Room of Retirement", "East Walkway", "LA5", "Library", "West Walkway", "North Hall", "Computer Lab", "Eat Club", "CECS Conference Room", "Forbidden Parking", "Rec Center", "Student Parking", "Walter Pyramid", "Japanese Garden", "George Allen Field"};
     //private ArrayList<RoomCoordinates> = new ArrayList<RoomCoordinates>();
     List movesList = new List();
     List movesList2 = new List();
@@ -119,8 +120,12 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             playerThreeDeck.add(commonDeck.getItem(12));
             playerThreeDeck.add(commonDeck.getItem(13));
             playerThreeDeck.add(commonDeck.getItem(14));
-            
+         
+        if(!year2){    
 		imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(0) + ".jpg");
+        }else{
+        	imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card" + playerOneDeck.getItem(0) + ".jpg");
+        }
 		labelCard = new JLabel(imageCard);        
 
     }
@@ -148,7 +153,12 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                     cardCnt = humanCount;
                 }
                 
+                if(!year2){  
                 imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(cardCnt) + ".jpg");
+                }else{
+                	imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card" + playerOneDeck.getItem(cardCnt) + ".jpg");
+
+                }
                 labelCard.setIcon(imageCard);
                 cardCnt++;
                 System.out.println("you have clicked image");
@@ -184,7 +194,6 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         playerAI2.setQualityPoints(6);
 
         
-        //playerTwoLabel.setFont(f);
         customColor = new Color(255,0,255);
 
         playerTwoLabel.setForeground(customColor);
@@ -215,7 +224,6 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         }
         customColor = new Color(125,125,235);
         playerThreeLabel.setForeground(customColor);
-       // playerThreeLabel.setFont(f);
 
         if (currentPlayer.equalsIgnoreCase("Deeksha")) {
             playerThreeLabel.setText("Kevin");
@@ -255,32 +263,6 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         //  Image card1 = new ImageIcon("C:\\Users\\DEEKSHA\\Desktop\\CSULB\\CECS543\\CECS543\\CECS_BS\\src\\com\\drawable\\Card1.png").getImage();
         
         JLabel mapLabel = new JLabel(image);
-
-
-        /* movesList.add("Brotman Hall");
-         movesList.add("ECS 302");
-         movesList.add("ECS 308");
-         movesList.add("Elevators");
-         movesList.add("South Hall");
-         movesList.add("Lactation Lounge");
-         movesList.add("Room of Retirement");
-         movesLi
-        
-        
-         st.add("East Walkway");
-         movesList.add("LA5");
-         movesList.add("Library");
-         movesList.add("West Walkway");
-         movesList.add("North Hall");
-         movesList.add("Computer Lab");
-         movesList.add("Eat Club");
-         movesList.add("CECS Conference Room");
-         movesList.add("Forbidden Parking");
-         movesList.add("Rec Center");
-         movesList.add("Student Parking");
-         movesList.add("Walter Pyramid");
-         movesList.add("Japanese Garden");
-         movesList.add("George Allen Field");*/
         movesList.add("South Hall");
         movesList2.add("South Hall");
         movesList3.add("South Hall");
@@ -297,16 +279,9 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         String column[] = {" ", "Learning", "Craft", "Integrity", "Quality Points"};
 
         scoreTable = new JTable(data, column);
-        //scoreTable.setValueAt("PPPP", 0, 1);
-        // mapLabel.setLocation(0, 0);
         frame.add(upperPanel);
         frame.add(bottomPanel);
-        //buttonPanel.setLocation(0, 500);
         labelCard.addMouseListener(null);
-        //buttonPanel.repaint();
-        //frame.add(buttonPanel);
-        //buttonPanel.setBounds(0, 500, 100, 600);
-
 
         cardButton.setOpaque(false);
         cardButton.setBounds(10, 10, 110, 33);
@@ -332,34 +307,39 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         movesList.setBounds(10, 130, 170, 100);
         bottomLabel.add(movesList);
 
-        //scoreTable.setOpaque(false);
-        scoreTable.setBounds(500, 10, 500, 500);
+        scoreTable.setBounds(600, 40, 500, 500);
         scoreTable.setOpaque(false);
-        scoreTable.setGridColor(Color.black);
-        //scoreTable.setBackground(Color.gray);
+        scoreTable.setGridColor(Color.red);
+        scoreTable.setBackground(Color.LIGHT_GRAY);
         bottomLabel.add(scoreTable);
 
         cardsCount.setOpaque(false);
-        cardsCount.setBounds(500, 100, 100, 10);
+        cardsCount.setBounds(600, 130, 100, 10);
+        cardsCount.setBackground(Color.LIGHT_GRAY);
         bottomLabel.add(cardsCount);
+        bottomLabel.setBackground(Color.LIGHT_GRAY);
         cardsCountValue.setOpaque(false);
-        cardsCountValue.setBounds(590, 100, 40, 10);
+        cardsCountValue.setBounds(690, 130, 40, 10);
+        cardsCountValue.setBackground(Color.LIGHT_GRAY);
         bottomLabel.add(cardsCountValue);
 
         discardsCount.setOpaque(false);
-        discardsCount.setBounds(700, 100, 120, 10);
+        discardsCount.setBounds(800, 130, 120, 10);
+        discardsCount.setBackground(Color.LIGHT_GRAY);
         bottomLabel.add(discardsCount);
         discardsCountValue.setOpaque(false);
-        discardsCountValue.setBounds(820, 100, 40, 10);
+        discardsCountValue.setBounds(920, 130, 40, 10);
         bottomLabel.add(discardsCountValue);
 
         currentState.setOpaque(false);
-        currentState.setBounds(500, 120, 500, 10);
+        currentState.setBounds(600, 150, 500, 10);
         bottomLabel.add(currentState);
 
         notes.setOpaque(false);
-        notes.setBounds(500, 150, 500, 50);
+        notes.setBounds(600, 180, 500, 50);
         bottomLabel.add(notes);
+        bottomLabel.setBackground(Color.LIGHT_GRAY);
+        bottomPanel.setBackground(Color.LIGHT_GRAY);
 
         upperPanel.add(mapLabel);
         bottomPanel.add(bottomLabel);
@@ -396,7 +376,6 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
-
     }
 
     class SelectMoveListner implements ActionListener {
@@ -435,13 +414,11 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 moveButton.setEnabled(false);
             }
             playButton.setEnabled(true);
-            //if(currentPlayer = PlayerName[0].toString())
             humanPlayer.setCurrentLocation(globalSelectedRoom);
             if (globalSelectedRoom.equalsIgnoreCase("South Hall")) {
                 System.out.println("Inside South Hall");
                 panelPlayer1.setBounds(200, 1200, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("North Hall");
                 movesList.add("ECS 302");
@@ -450,20 +427,16 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList.add("Lactation Lounge");
                 movesList.add("East Walkway");
                 movesList.add("ECS 308");
-
                 currentState.setText("You are " + currentPlayer + " and You are in South Hall");
             }
-
 
             if (globalSelectedRoom.equalsIgnoreCase("ECS 302")) {
                 System.out.println("Inside ECS 302 room");
                 panelPlayer1.setBounds(0, 1000, 1750, 1000);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("North Hall");
                 movesList.add("South Hall");
-
                 currentState.setText("You are" + currentPlayer + " and You are in ECS 302");
             }
 
@@ -471,10 +444,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Eat Club");
                 panelPlayer1.setBounds(200, 900, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("South Hall");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Eat Club");
             }
 
@@ -482,7 +453,6 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside CECS Conference Room");
                 panelPlayer1.setBounds(350, 900, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("South Hall");
 
@@ -504,10 +474,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside ECS 308");
                 panelPlayer1.setBounds(0, 1320, 1750, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("South Hall");
-
                 currentState.setText("You are" + currentPlayer + " and You are in ECS 308");
             }
 
@@ -515,12 +483,10 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside East Walkway");
                 panelPlayer1.setBounds(580, 1100, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("South Hall");
                 movesList.add("Brotman Hall");
                 movesList.add("Forbidden Parking");
-
                 currentState.setText("You are" + currentPlayer + " and You are in East Walkway");
             }
 
@@ -528,12 +494,9 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Brotman Hall");
                 panelPlayer1.setBounds(300, 1800, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("East Walkway");
                 movesList.add("LA5");
-
-
                 currentState.setText("You are" + currentPlayer + " and You are in Brotman Hall");
             }
 
@@ -554,15 +517,12 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Rec Center");
                 panelPlayer1.setBounds(-150, 700, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
-
                 movesList.add("Student Parking");
                 movesList.add("George Allen Field");
                 movesList.add("Walter Pyramid");
                 movesList.add("Student Parking");
                 movesList.add("West Walkway");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Rec Center");
             }
 
@@ -570,14 +530,11 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Student Parking");
                 panelPlayer1.setBounds(350, 350, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
-
                 movesList.add("Walter Pyramid");
                 movesList.add("Rec Center");
                 movesList.add("Japanese Garden ");
                 movesList.add("Forbidden Parking");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Student Parking");
             }
 
@@ -585,15 +542,12 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Walter Pyramid");
                 panelPlayer1.setBounds(-350, 350, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
-
                 movesList.add("Walter Pyramid");
                 movesList.add("Rec Center");
                 movesList.add("Japanese Garden ");
                 movesList.add("Student Parking");
                 movesList.add("George Allen Field");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Walter Pyramid");
             }
 
@@ -601,13 +555,10 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Japanese Garden");
                 panelPlayer1.setBounds(-350, 150, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
-
                 movesList.add("Walter Pyramid");
                 movesList.add("Student Parking");
                 movesList.add("George Allen Field");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Japanese Garden");
             }
 
@@ -615,14 +566,11 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside George Allen Field");
                 panelPlayer1.setBounds(-750, 70, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
-
                 movesList.add("Walter Pyramid");
                 movesList.add("Japanese Garden");
                 movesList.add("West Walkway");
                 movesList.add("Rec Center");
-
                 currentState.setText("You are" + currentPlayer + " and You are in George Allen Field");
             }
 
@@ -630,13 +578,10 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside West Walkway");
                 panelPlayer1.setBounds(-850, 1200, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
-
                 movesList.add("George Allen Field");
                 movesList.add("North Hall");
                 movesList.add("Library");
-
                 currentState.setText("You are" + currentPlayer + " and You are in West Walkway");
             }
 
@@ -644,7 +589,6 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside North Hall");
                 panelPlayer1.setBounds(-500, 1200, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("South Hall");
                 movesList.add("ECS 302");
@@ -652,9 +596,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 movesList.add("West Walkway");
                 movesList.add("Elevators");
                 movesList.add("Room of Retirement");
-
                 currentState.setText("You are" + currentPlayer + " and You are in North Hall");
-
                 moveButton.setEnabled(false);
             }
 
@@ -662,59 +604,45 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 System.out.println("Inside Library");
                 panelPlayer1.setBounds(-700, 1800, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("West Walkway");
                 movesList.add("LA5");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Library");
-
             }
 
             if (globalSelectedRoom.equalsIgnoreCase("Room of Retirement")) {
                 System.out.println("Inside Room of Retirement");
                 panelPlayer1.setBounds(-700, 1400, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("North Hall");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Room of Retirement");
-
             }
 
             if (globalSelectedRoom.equalsIgnoreCase("Computer Lab")) {
                 System.out.println("Inside Computer Lab");
                 panelPlayer1.setBounds(-700, 950, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("North Hall");
-
                 currentState.setText("You are" + currentPlayer + " and You are in Computer Lab");
-
             }
-
-
+            
             if (globalSelectedRoom.equalsIgnoreCase("LA5")) {
                 System.out.println("Inside LA5");
                 panelPlayer1.setBounds(-100, 1800, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("Library");
                 movesList.add("Elevators");
                 movesList.add("Brotman Hall");
-
                 currentState.setText("You are" + currentPlayer + " and You are in LA5");
-
             }
 
             if (globalSelectedRoom.equalsIgnoreCase("Elevators")) {
                 System.out.println("Inside Elevators");
                 panelPlayer1.setBounds(-300, 1400, 1900, 1320);
                 panelPlayer1.repaint();
-
                 movesList.removeAll();
                 movesList.add("LA5");
                 movesList.add("North Hall");
@@ -722,23 +650,19 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
                 currentState.setText("You are" + currentPlayer + " and You are in Elevators");
 
             }
-
-
-
-
-
         }
     }
 
     class PlayCardListner implements ActionListener {
-
         @Override
-        public void actionPerformed(ActionEvent e) {
-            //globalSelectedRoom=e.getActionCommand().toString();
-            
+        public void actionPerformed(ActionEvent e) {            
          if(humanCount<5){
-            imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(humanCount) + ".jpg");
-                labelCard.setIcon(imageCard);
+        	 if(!year2){
+        	 imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/drawable/card" + playerOneDeck.getItem(humanCount) + ".jpg");
+        	 }else{
+        		 imageCard = new ImageIcon("/Users/Kevin/Desktop/CSULB/CECS543Project/CECS_BS/src/com/year/card" + playerOneDeck.getItem(humanCount) + ".jpg");
+        	 }
+        	 labelCard.setIcon(imageCard);
          }       
             
             if(humanCount>=5){
@@ -763,11 +687,8 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             playerThreeDeck.add(commonDeck.getItem(27));
             playerThreeDeck.add(commonDeck.getItem(28));
             playerThreeDeck.add(commonDeck.getItem(29));
-            }else{
-            
-                //switch statement goes here for all the cards
-            
-            humanPlayer=selectClass(humanPlayer,Integer.parseInt(playerOneDeck.getItem(humanCount-1)));    
+            }else{            
+            humanPlayer=selectClass(humanPlayer,Integer.parseInt(playerOneDeck.getItem(humanCount)));    
             System.out.println("humanCount: "+humanCount);
             scoreTable.setValueAt(""+humanPlayer.getLearningChip()+"", 1, 1);
             scoreTable.setValueAt(""+humanPlayer.getCraftChip()+"", 1, 2);
@@ -820,10 +741,9 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             scoreTable.setValueAt(""+playerAI1.getCraftChip()+"", 2, 2);
             scoreTable.setValueAt(""+playerAI1.getIntegrityChip()+"", 2, 3);
             scoreTable.setValueAt(""+playerAI1.getQualityPoints()+"", 2, 4);
-           //humanCount++;
             
             if(humanPlayer.isDiscardCard()){
-                CardDialog objDis= new CardDialog(playerOneDeck,humanCount-1);
+                CardDialog objDis= new CardDialog(playerOneDeck,humanCount-1, year2);
                 playerOneDeck.remove(Integer.parseInt(objDis.getDc()));
                 humanCount++;
                 discardCardVal++;
@@ -843,6 +763,442 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
             }
             discardsCountValue.setText(""+discardCardVal);
         }
+        public void aI3Move() {
+        	playerAI2.setCurrentLocation(globalSelectedRoom3);
+            if (globalSelectedRoom3.equalsIgnoreCase("South Hall")) {
+                System.out.println("Inside South Hall");
+                panelPlayer3.setBounds(60, 1200, 1900, 1320);
+                panelPlayer3.repaint();	
+                movesList3.removeAll();
+                movesList3.add("North Hall");
+                movesList3.add("ECS 302");
+                movesList3.add("Eat Club");
+                movesList3.add("CECS Conference Room");
+                movesList3.add("Lactation Lounge");
+                movesList3.add("East Walkway");
+                movesList3.add("ECS 308");
+            }
+
+
+            if (globalSelectedRoom3.equalsIgnoreCase("ECS 302")) {
+                System.out.println("Inside ECS 302 room");
+                panelPlayer3.setBounds(0, 950, 1750, 1000);
+                panelPlayer3.repaint();
+
+                movesList3.removeAll();
+                movesList3.add("North Hall");
+                movesList3.add("South Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Eat Club")) {
+                System.out.println("Inside Eat Club");
+                panelPlayer3.setBounds(200, 1000, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("CECS Conference Room")) {
+                System.out.println("Inside CECS Conference Room");
+                panelPlayer3.setBounds(370, 1000, 1900, 1320);
+                panelPlayer3.repaint();
+
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Lactation Lounge")) {
+                System.out.println("Inside Lactation Lounge");
+                panelPlayer3.setBounds(400, 1500, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("ECS 308")) {
+                System.out.println("Inside ECS 308");
+                panelPlayer3.setBounds(0, 1420, 1750, 1420);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("East Walkway")) {
+                System.out.println("Inside East Walkway");
+                panelPlayer3.setBounds(580, 1200, 1900, 1320);
+                panelPlayer3.repaint();	
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+                movesList3.add("Brotman Hall");
+                movesList3.add("Forbidden Parking");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Brotman Hall")) {
+                System.out.println("Inside Brotman Hall");
+                panelPlayer3.setBounds(300, 1900, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("East Walkway");
+                movesList3.add("LA5");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Forbidden Parking")) {
+                System.out.println("Inside Forbidden Parking");
+                panelPlayer3.setBounds(500, 750, 1900, 1320);
+                panelPlayer3.repaint();	
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+                movesList3.add("Rec Center");
+                movesList3.add("Student Parking");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Rec Center")) {
+                System.out.println("Inside Rec Center");
+                panelPlayer3.setBounds(-150, 650, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("Student Parking");
+                movesList3.add("George Allen Field");
+                movesList3.add("Walter Pyramid");
+                movesList3.add("Student Parking");
+                movesList3.add("West Walkway");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Student Parking")) {
+                System.out.println("Inside Student Parking");
+                panelPlayer3.setBounds(350, 400, 1900, 1320);
+                panelPlayer3.repaint();	
+                movesList3.removeAll();	
+                movesList3.add("Walter Pyramid");
+                movesList3.add("Rec Center");
+                movesList3.add("Japanese Garden ");
+                movesList3.add("Forbidden Parking");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Walter Pyramid")) {
+                System.out.println("Inside Walter Pyramid");
+                panelPlayer3.setBounds(-350, 400, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("Walter Pyramid");
+                movesList3.add("Rec Center");
+                movesList3.add("Japanese Garden ");
+                movesList3.add("Student Parking");
+                movesList3.add("George Allen Field");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Japanese Garden")) {
+                System.out.println("Inside Japanese Garden");
+                panelPlayer3.setBounds(-350, 50, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("Walter Pyramid");
+                movesList3.add("Student Parking");
+                movesList3.add("George Allen Field");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("George Allen Field")) {
+                System.out.println("Inside George Allen Field");
+                panelPlayer3.setBounds(-750, 150, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("Walter Pyramid");
+                movesList3.add("Japanese Garden");
+                movesList3.add("West Walkway");
+                movesList3.add("Rec Center");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("West Walkway")) {
+                System.out.println("Inside West Walkway");
+                panelPlayer3.setBounds(-850, 1100, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("George Allen Field");
+                movesList3.add("North Hall");
+                movesList3.add("Library");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("North Hall")) {
+                System.out.println("Inside North Hall");
+                panelPlayer3.setBounds(-300, 1200, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("South Hall");
+                movesList3.add("ECS 302");
+                movesList3.add("Computer Lab");
+                movesList3.add("West Walkway");
+                movesList3.add("Elevators");
+                movesList3.add("Room of Retirement");
+                moveButton.setEnabled(false);
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Library")) {
+                System.out.println("Inside Library");
+                panelPlayer3.setBounds(-700, 1900, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("West Walkway");
+                movesList3.add("LA5");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Room of Retirement")) {
+                System.out.println("Inside Room of Retirement");
+                panelPlayer3.setBounds(-550, 1450, 1900, 1320);
+                panelPlayer3.repaint();
+
+                movesList3.removeAll();
+                movesList3.add("North Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Computer Lab")) {
+                System.out.println("Inside Computer Lab");
+                panelPlayer3.setBounds(-700, 900, 1900, 1320);
+                panelPlayer3.repaint();	
+                movesList3.removeAll();
+                movesList3.add("North Hall");
+            }
+
+
+            if (globalSelectedRoom3.equalsIgnoreCase("LA5")) {
+                System.out.println("Inside LA5");
+                panelPlayer3.setBounds(-100, 1900, 1900, 1320);
+                panelPlayer3.repaint();	
+                movesList3.removeAll();
+                movesList3.add("Library");
+                movesList3.add("Elevators");
+                movesList3.add("Brotman Hall");
+            }
+
+            if (globalSelectedRoom3.equalsIgnoreCase("Elevators")) {
+                System.out.println("Inside Elevators");
+                panelPlayer3.setBounds(-280, 1500, 1900, 1320);
+                panelPlayer3.repaint();
+                movesList3.removeAll();
+                movesList3.add("LA5");
+                movesList3.add("North Hall");
+
+                //  currentState.setText("You are" + currentPlayer + " and You are in Elevators");
+
+            }
+        }
+        public void aI2Move() { 
+            playerAI1.setCurrentLocation(globalSelectedRoom2); 
+            if (globalSelectedRoom2.equalsIgnoreCase("South Hall")) {
+                System.out.println("Inside South Hall");
+                panelPlayer2.setBounds(200, 1150, 1900, 1320);
+                panelPlayer2.repaint();	
+                movesList2.removeAll();
+                movesList2.add("North Hall");
+                movesList2.add("ECS 302");
+                movesList2.add("Eat Club");
+                movesList2.add("CECS Conference Room");
+                movesList2.add("Lactation Lounge");
+                movesList2.add("East Walkway");
+                movesList2.add("ECS 308");
+            }
+
+
+            if (globalSelectedRoom2.equalsIgnoreCase("ECS 302")) {
+                System.out.println("Inside ECS 302 room");
+                panelPlayer2.setBounds(0, 1050, 1750, 1000);
+                panelPlayer2.repaint();
+
+                movesList2.removeAll();
+                movesList2.add("North Hall");
+                movesList2.add("South Hall");
+
+                // currentState.setText("You are" + currentPlayer + " and You are in ECS 302");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Eat Club")) {
+                System.out.println("Inside Eat Club");
+                panelPlayer2.setBounds(200, 950, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("CECS Conference Room")) {
+                System.out.println("Inside CECS Conference Room");
+                panelPlayer2.setBounds(370, 950, 1900, 1320);
+                panelPlayer2.repaint();	
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Lactation Lounge")) {
+                System.out.println("Inside Lactation Lounge");
+                panelPlayer2.setBounds(400, 1450, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("ECS 308")) {
+                System.out.println("Inside ECS 308");
+                panelPlayer2.setBounds(0, 1370, 1750, 13270);
+                panelPlayer2.repaint();
+
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("East Walkway")) {
+                System.out.println("Inside East Walkway");
+                panelPlayer2.setBounds(580, 1150, 1900, 1320);
+                panelPlayer2.repaint();	
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+                movesList2.add("Brotman Hall");
+                movesList2.add("Forbidden Parking");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Brotman Hall")) {
+                System.out.println("Inside Brotman Hall");
+                panelPlayer2.setBounds(300, 1850, 1900, 1320);
+                panelPlayer2.repaint();	
+                movesList2.removeAll();
+                movesList2.add("East Walkway");
+                movesList2.add("LA5");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Forbidden Parking")) {
+                System.out.println("Inside Forbidden Parking");
+                panelPlayer2.setBounds(350, 750, 1900, 1320);
+                panelPlayer2.repaint();
+
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+                movesList2.add("Rec Center");
+                movesList2.add("Student Parking");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Rec Center")) {
+                System.out.println("Inside Rec Center");
+                panelPlayer2.setBounds(-150, 750, 1900, 1320);
+                panelPlayer2.repaint();	
+                movesList2.removeAll();	
+                movesList2.add("Student Parking");
+                movesList2.add("George Allen Field");
+                movesList2.add("Walter Pyramid");
+                movesList2.add("Student Parking");
+                movesList2.add("West Walkway");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Student Parking")) {
+                System.out.println("Inside Student Parking");
+                panelPlayer2.setBounds(350, 300, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();	
+                movesList2.add("Walter Pyramid");
+                movesList2.add("Rec Center");
+                movesList2.add("Japanese Garden ");
+                movesList2.add("Forbidden Parking");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Walter Pyramid")) {
+                System.out.println("Inside Walter Pyramid");
+                panelPlayer2.setBounds(-350, 300, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("Walter Pyramid");
+                movesList2.add("Rec Center");
+                movesList2.add("Japanese Garden ");
+                movesList2.add("Student Parking");
+                movesList2.add("George Allen Field");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Japanese Garden")) {
+                System.out.println("Inside Japanese Garden");
+                panelPlayer2.setBounds(-350, 100, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("Walter Pyramid");
+                movesList2.add("Student Parking");
+                movesList2.add("George Allen Field");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("George Allen Field")) {
+                System.out.println("Inside George Allen Field");
+                panelPlayer2.setBounds(-750, 100, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("Walter Pyramid");
+                movesList2.add("Japanese Garden");
+                movesList2.add("West Walkway");
+                movesList2.add("Rec Center");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("West Walkway")) {
+                System.out.println("Inside West Walkway");
+                panelPlayer2.setBounds(-850, 1150, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("George Allen Field");
+                movesList2.add("North Hall");
+                movesList2.add("Library");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("North Hall")) {
+                System.out.println("Inside North Hall");
+                panelPlayer2.setBounds(-400, 1200, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("South Hall");
+                movesList2.add("ECS 302");
+                movesList2.add("Computer Lab");
+                movesList2.add("West Walkway");
+                movesList2.add("Elevators");
+                movesList2.add("Room of Retirement");
+                moveButton.setEnabled(false);
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Library")) {
+                System.out.println("Inside Library");
+                panelPlayer2.setBounds(-700, 1850, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("West Walkway");
+                movesList2.add("LA5");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Room of Retirement")) {
+                System.out.println("Inside Room of Retirement");
+                panelPlayer2.setBounds(-700, 1450, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("North Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Computer Lab")) {
+                System.out.println("Inside Computer Lab");
+                panelPlayer2.setBounds(-700, 1000, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("North Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("LA5")) {
+                System.out.println("Inside LA5");
+                panelPlayer2.setBounds(-100, 1850, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("Library");
+                movesList2.add("Elevators");
+                movesList2.add("Brotman Hall");
+            }
+
+            if (globalSelectedRoom2.equalsIgnoreCase("Elevators")) {
+                System.out.println("Inside Elevators");
+                panelPlayer2.setBounds(-290, 1450, 1900, 1320);
+                panelPlayer2.repaint();
+                movesList2.removeAll();
+                movesList2.add("LA5");
+                movesList2.add("North Hall");
+            }
+
+        
+    }
 
         public Player selectClass(Player player,int selectCnt){
             
@@ -903,585 +1259,7 @@ deckArr = objUtil.dealDeck().toArray( new Integer[objUtil.dealDeck().size()]);
 
         }
 
-        public void aI3Move() {
+    }   
 
-            playerAI2.setCurrentLocation(globalSelectedRoom3);
-            if (globalSelectedRoom3.equalsIgnoreCase("South Hall")) {
-                System.out.println("Inside South Hall");
-                panelPlayer3.setBounds(60, 1200, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("North Hall");
-                movesList3.add("ECS 302");
-                movesList3.add("Eat Club");
-                movesList3.add("CECS Conference Room");
-                movesList3.add("Lactation Lounge");
-                movesList3.add("East Walkway");
-                movesList3.add("ECS 308");
-
-                //   currentState.setText("You are " + currentPlayer +" and You are in South Hall");
-            }
-
-
-            if (globalSelectedRoom3.equalsIgnoreCase("ECS 302")) {
-                System.out.println("Inside ECS 302 room");
-                panelPlayer3.setBounds(0, 950, 1750, 1000);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("North Hall");
-                movesList3.add("South Hall");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in ECS 302");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Eat Club")) {
-                System.out.println("Inside Eat Club");
-                panelPlayer3.setBounds(200, 1000, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Eat Club");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("CECS Conference Room")) {
-                System.out.println("Inside CECS Conference Room");
-                panelPlayer3.setBounds(370, 1000, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in CECS Conference Room");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Lactation Lounge")) {
-                System.out.println("Inside Lactation Lounge");
-                panelPlayer3.setBounds(400, 1500, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Lactation Lounge");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("ECS 308")) {
-                System.out.println("Inside ECS 308");
-                panelPlayer3.setBounds(0, 1420, 1750, 1420);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in ECS 308");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("East Walkway")) {
-                System.out.println("Inside East Walkway");
-                panelPlayer3.setBounds(580, 1200, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-                movesList3.add("Brotman Hall");
-                movesList3.add("Forbidden Parking");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in East Walkway");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Brotman Hall")) {
-                System.out.println("Inside Brotman Hall");
-                panelPlayer3.setBounds(300, 1900, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("East Walkway");
-                movesList3.add("LA5");
-
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Brotman Hall");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Forbidden Parking")) {
-                System.out.println("Inside Forbidden Parking");
-                panelPlayer3.setBounds(500, 750, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-                movesList3.add("Rec Center");
-                movesList3.add("Student Parking");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Forbidden Parking");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Rec Center")) {
-                System.out.println("Inside Rec Center");
-                panelPlayer3.setBounds(-150, 650, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-
-                movesList3.add("Student Parking");
-                movesList3.add("George Allen Field");
-                movesList3.add("Walter Pyramid");
-                movesList3.add("Student Parking");
-                movesList3.add("West Walkway");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Rec Center");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Student Parking")) {
-                System.out.println("Inside Student Parking");
-                panelPlayer3.setBounds(350, 400, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-
-                movesList3.add("Walter Pyramid");
-                movesList3.add("Rec Center");
-                movesList3.add("Japanese Garden ");
-                movesList3.add("Forbidden Parking");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Student Parking");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Walter Pyramid")) {
-                System.out.println("Inside Walter Pyramid");
-                panelPlayer3.setBounds(-350, 400, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-
-                movesList3.add("Walter Pyramid");
-                movesList3.add("Rec Center");
-                movesList3.add("Japanese Garden ");
-                movesList3.add("Student Parking");
-                movesList3.add("George Allen Field");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Walter Pyramid");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Japanese Garden")) {
-                System.out.println("Inside Japanese Garden");
-                panelPlayer3.setBounds(-350, 50, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-
-                movesList3.add("Walter Pyramid");
-                movesList3.add("Student Parking");
-                movesList3.add("George Allen Field");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Japanese Garden");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("George Allen Field")) {
-                System.out.println("Inside George Allen Field");
-                panelPlayer3.setBounds(-750, 150, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-
-                movesList3.add("Walter Pyramid");
-                movesList3.add("Japanese Garden");
-                movesList3.add("West Walkway");
-                movesList3.add("Rec Center");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in George Allen Field");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("West Walkway")) {
-                System.out.println("Inside West Walkway");
-                panelPlayer3.setBounds(-850, 1100, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-
-                movesList3.add("George Allen Field");
-                movesList3.add("North Hall");
-                movesList3.add("Library");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in West Walkway");
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("North Hall")) {
-                System.out.println("Inside North Hall");
-                panelPlayer3.setBounds(-300, 1200, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("South Hall");
-                movesList3.add("ECS 302");
-                movesList3.add("Computer Lab");
-                movesList3.add("West Walkway");
-                movesList3.add("Elevators");
-                movesList3.add("Room of Retirement");
-
-                //    currentState.setText("You are" + currentPlayer + " and You are in North Hall");
-
-                moveButton.setEnabled(false);
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Library")) {
-                System.out.println("Inside Library");
-                panelPlayer3.setBounds(-700, 1900, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("West Walkway");
-                movesList3.add("LA5");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Library");
-
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Room of Retirement")) {
-                System.out.println("Inside Room of Retirement");
-                panelPlayer3.setBounds(-550, 1450, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("North Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Room of Retirement");
-
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Computer Lab")) {
-                System.out.println("Inside Computer Lab");
-                panelPlayer3.setBounds(-700, 900, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("North Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Computer Lab");
-
-            }
-
-
-            if (globalSelectedRoom3.equalsIgnoreCase("LA5")) {
-                System.out.println("Inside LA5");
-                panelPlayer3.setBounds(-100, 1900, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("Library");
-                movesList3.add("Elevators");
-                movesList3.add("Brotman Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in LA5");
-
-            }
-
-            if (globalSelectedRoom3.equalsIgnoreCase("Elevators")) {
-                System.out.println("Inside Elevators");
-                panelPlayer3.setBounds(-280, 1500, 1900, 1320);
-                panelPlayer3.repaint();
-
-                movesList3.removeAll();
-                movesList3.add("LA5");
-                movesList3.add("North Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Elevators");
-
-            }
-        }
-
-        public void aI2Move() {
-            
-            playerAI1.setCurrentLocation(globalSelectedRoom2); 
-            if (globalSelectedRoom2.equalsIgnoreCase("South Hall")) {
-                System.out.println("Inside South Hall");
-                panelPlayer2.setBounds(200, 1150, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("North Hall");
-                movesList2.add("ECS 302");
-                movesList2.add("Eat Club");
-                movesList2.add("CECS Conference Room");
-                movesList2.add("Lactation Lounge");
-                movesList2.add("East Walkway");
-                movesList2.add("ECS 308");
-
-                //   currentState.setText("You are " + currentPlayer +" and You are in South Hall");
-            }
-
-
-            if (globalSelectedRoom2.equalsIgnoreCase("ECS 302")) {
-                System.out.println("Inside ECS 302 room");
-                panelPlayer2.setBounds(0, 1050, 1750, 1000);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("North Hall");
-                movesList2.add("South Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in ECS 302");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Eat Club")) {
-                System.out.println("Inside Eat Club");
-                panelPlayer2.setBounds(200, 950, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Eat Club");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("CECS Conference Room")) {
-                System.out.println("Inside CECS Conference Room");
-                panelPlayer2.setBounds(370, 950, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in CECS Conference Room");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Lactation Lounge")) {
-                System.out.println("Inside Lactation Lounge");
-                panelPlayer2.setBounds(400, 1450, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Lactation Lounge");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("ECS 308")) {
-                System.out.println("Inside ECS 308");
-                panelPlayer2.setBounds(0, 1370, 1750, 13270);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in ECS 308");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("East Walkway")) {
-                System.out.println("Inside East Walkway");
-                panelPlayer2.setBounds(580, 1150, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-                movesList2.add("Brotman Hall");
-                movesList2.add("Forbidden Parking");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in East Walkway");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Brotman Hall")) {
-                System.out.println("Inside Brotman Hall");
-                panelPlayer2.setBounds(300, 1850, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("East Walkway");
-                movesList2.add("LA5");
-
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Brotman Hall");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Forbidden Parking")) {
-                System.out.println("Inside Forbidden Parking");
-                panelPlayer2.setBounds(350, 750, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-                movesList2.add("Rec Center");
-                movesList2.add("Student Parking");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Forbidden Parking");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Rec Center")) {
-                System.out.println("Inside Rec Center");
-                panelPlayer2.setBounds(-150, 750, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-
-                movesList2.add("Student Parking");
-                movesList2.add("George Allen Field");
-                movesList2.add("Walter Pyramid");
-                movesList2.add("Student Parking");
-                movesList2.add("West Walkway");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Rec Center");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Student Parking")) {
-                System.out.println("Inside Student Parking");
-                panelPlayer2.setBounds(350, 300, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-
-                movesList2.add("Walter Pyramid");
-                movesList2.add("Rec Center");
-                movesList2.add("Japanese Garden ");
-                movesList2.add("Forbidden Parking");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Student Parking");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Walter Pyramid")) {
-                System.out.println("Inside Walter Pyramid");
-                panelPlayer2.setBounds(-350, 300, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-
-                movesList2.add("Walter Pyramid");
-                movesList2.add("Rec Center");
-                movesList2.add("Japanese Garden ");
-                movesList2.add("Student Parking");
-                movesList2.add("George Allen Field");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Walter Pyramid");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Japanese Garden")) {
-                System.out.println("Inside Japanese Garden");
-                panelPlayer2.setBounds(-350, 100, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-
-                movesList2.add("Walter Pyramid");
-                movesList2.add("Student Parking");
-                movesList2.add("George Allen Field");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Japanese Garden");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("George Allen Field")) {
-                System.out.println("Inside George Allen Field");
-                panelPlayer2.setBounds(-750, 100, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-
-                movesList2.add("Walter Pyramid");
-                movesList2.add("Japanese Garden");
-                movesList2.add("West Walkway");
-                movesList2.add("Rec Center");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in George Allen Field");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("West Walkway")) {
-                System.out.println("Inside West Walkway");
-                panelPlayer2.setBounds(-850, 1150, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-
-                movesList2.add("George Allen Field");
-                movesList2.add("North Hall");
-                movesList2.add("Library");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in West Walkway");
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("North Hall")) {
-                System.out.println("Inside North Hall");
-                panelPlayer2.setBounds(-400, 1200, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("South Hall");
-                movesList2.add("ECS 302");
-                movesList2.add("Computer Lab");
-                movesList2.add("West Walkway");
-                movesList2.add("Elevators");
-                movesList2.add("Room of Retirement");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in North Hall");
-
-                moveButton.setEnabled(false);
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Library")) {
-                System.out.println("Inside Library");
-                panelPlayer2.setBounds(-700, 1850, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("West Walkway");
-                movesList2.add("LA5");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in Library");
-
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Room of Retirement")) {
-                System.out.println("Inside Room of Retirement");
-                panelPlayer2.setBounds(-700, 1450, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("North Hall");
-
-                // currentState.setText("You are" + currentPlayer + " and You are in Room of Retirement");
-
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Computer Lab")) {
-                System.out.println("Inside Computer Lab");
-                panelPlayer2.setBounds(-700, 1000, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("North Hall");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in Computer Lab");
-
-            }
-
-
-            if (globalSelectedRoom2.equalsIgnoreCase("LA5")) {
-                System.out.println("Inside LA5");
-                panelPlayer2.setBounds(-100, 1850, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("Library");
-                movesList2.add("Elevators");
-                movesList2.add("Brotman Hall");
-
-                //currentState.setText("You are" + currentPlayer + " and You are in LA5");
-
-            }
-
-            if (globalSelectedRoom2.equalsIgnoreCase("Elevators")) {
-                System.out.println("Inside Elevators");
-                panelPlayer2.setBounds(-290, 1450, 1900, 1320);
-                panelPlayer2.repaint();
-
-                movesList2.removeAll();
-                movesList2.add("LA5");
-                movesList2.add("North Hall");
-
-                //  currentState.setText("You are" + currentPlayer + " and You are in Elevators");
-
-            }
-
-        }
-    }
+        
 }

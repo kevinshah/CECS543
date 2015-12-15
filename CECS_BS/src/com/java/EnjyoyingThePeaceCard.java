@@ -13,6 +13,8 @@ public class EnjyoyingThePeaceCard extends CardBase{
 		if(isValidLocation(player, validLocations)) {
 			
 			// display pop up with Learning Chip and Integrity Chip to choose a chip and 
+			player.setChooseQuality(true);
+
 						// then call IncrementChipBasedonLabel() method 
 			
 		}

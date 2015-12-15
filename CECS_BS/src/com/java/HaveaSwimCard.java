@@ -13,6 +13,8 @@ public class HaveaSwimCard extends CardBase{
 		if(isValidLocation(player, validLocations)) {
 			
 			// display pop up with Learning Chip, Craft Chip and Integrity Chip to choose a chip and 
+			player.setChooseQuality(true);
+
 			// then call IncrementChipBasedonLabel() method
 			
 		}
