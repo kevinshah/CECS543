@@ -8,13 +8,15 @@ public class Math122Card extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.Library));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations)) {
 			
 			// display pop up with Learning Chip and Integrity Chip to choose a chip and 
 			// then call IncrementChipBasedonLabel() method 
 		}
+		return player;
+
 	}
 
 }

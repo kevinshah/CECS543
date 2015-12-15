@@ -9,7 +9,7 @@ public class ElectiveClassCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.Library));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 2)) {
@@ -20,6 +20,8 @@ public class ElectiveClassCard extends CardBase{
 			player.setQualityPoints(player.getQualityPoints() - 2);
 						
 		}
+		return player;
+
 	}
 
 }

@@ -10,7 +10,7 @@ public class Chem111Card extends CardBase{
 			Constants.StudentParking, Constants.RecCenter, Constants.WestWalkway, Constants.EastWalkway, Constants.Library, Constants.BratwrustHall, 
 			Constants.LA5, Constants.ForbiddenParking));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.CraftChip, player, 6)) {
@@ -20,6 +20,8 @@ public class Chem111Card extends CardBase{
 			
 			moveToRoom(player, Constants.StudentParking);
 		}
+		return player;
+
 	}
 
 }

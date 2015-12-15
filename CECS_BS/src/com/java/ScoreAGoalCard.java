@@ -9,7 +9,7 @@ public class ScoreAGoalCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.GeorgeAllenField));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.CraftChip, player, 3)) {
@@ -19,6 +19,8 @@ public class ScoreAGoalCard extends CardBase{
 			
 			moveToRoom(player, Constants.StudentParking);
 		}
+		return player;
+
 	}
 
 }

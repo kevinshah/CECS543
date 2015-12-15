@@ -8,7 +8,7 @@ public class FallInThePondCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.JapaneseGarden));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 3)) {
@@ -18,6 +18,8 @@ public class FallInThePondCard extends CardBase{
 			
 			moveToRoom(player, Constants.LactationLounge);
 		}
+		return player;
+
 	}
 
 }

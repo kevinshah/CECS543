@@ -9,6 +9,9 @@ public class Player {
 	private int integrityChip;
 	private int qualityPoints;
 	private String chosenLabel;
+    private String desLoc;
+    private boolean discardCard=false;
+    private boolean chooseQuality=false;
 	
 	private List<GameCard> playerCards;
 	
@@ -54,10 +57,16 @@ public class Player {
 	public void setChosenLabel(String chosenLabel) {
 		this.chosenLabel = chosenLabel;
 	}
-	
-	
-	
-	
-	
-
+	public boolean isChooseQuality() {
+		 return chooseQuality;
+	}
+	public void setChooseQuality(boolean chooseQuality) {
+		 this.chooseQuality = chooseQuality;
+	}
+	public boolean isDiscardCard() {
+		return discardCard;
+	}
+	public void setDiscardCard(boolean discardCard) {
+		 this.discardCard = discardCard;
+	}
 }

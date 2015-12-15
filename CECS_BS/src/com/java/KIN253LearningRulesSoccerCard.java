@@ -8,7 +8,7 @@ public class KIN253LearningRulesSoccerCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.GeorgeAllenField));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 4)) {
@@ -18,6 +18,8 @@ public class KIN253LearningRulesSoccerCard extends CardBase{
 			// call move method here
 			
 		}
+		return player;
+
 	}
 
 }

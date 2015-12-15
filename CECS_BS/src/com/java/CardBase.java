@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public abstract class CardBase {
-	public abstract void play(Player player);
+	public abstract Player play(Player player);
 	
 	/**
 	 * check if current location is valid or not.

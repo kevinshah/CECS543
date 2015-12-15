@@ -9,7 +9,7 @@ public class TheOutPostCard extends CardBase{
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.GeorgeAllenField, Constants.JapaneseGarden, Constants.WalterPyramid, 
 			Constants.StudentParking, Constants.RecCenter, Constants.WestWalkway, Constants.EastWalkway, Constants.Library, Constants.BratwrustHall, Constants.LA5));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations)) {
 			
@@ -17,6 +17,8 @@ public class TheOutPostCard extends CardBase{
 						// then call IncrementChipBasedonLabel() method 
 			
 		} 
+		return player;
+
 	}
 
 }

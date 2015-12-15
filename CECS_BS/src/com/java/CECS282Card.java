@@ -10,7 +10,7 @@ public class CECS282Card extends CardBase{
 			Constants.Elevators, Constants.NorthHall, Constants.SouthHall, Constants.LactationLounge,
 			Constants.CECSConference, Constants.ComputerLab, Constants.RoomOfRetirement));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 8)&& 
@@ -23,6 +23,8 @@ public class CECS282Card extends CardBase{
 			loseCards(player, 1);
 			
 		}
+		return player;
+
 	}
 
 }

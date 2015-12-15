@@ -8,7 +8,7 @@ public class NewLaptopCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.ComputerLab));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 4)) {
@@ -20,6 +20,8 @@ public class NewLaptopCard extends CardBase{
 			loseCards(player, 1);
 			
 		}
+		return player;
+
 	}
 
 }

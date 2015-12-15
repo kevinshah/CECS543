@@ -8,7 +8,7 @@ public class CECS285Card extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.EatClub, Constants.JapaneseGarden));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 6)) {
@@ -22,6 +22,8 @@ public class CECS285Card extends CardBase{
 			player.setQualityPoints(player.getQualityPoints() - 3);
 			
 		}
+		return player;
+
 	}
 
 }

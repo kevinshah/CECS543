@@ -8,7 +8,7 @@ public class PHIL270Card extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.LA5, Constants.Library));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 7)) {
@@ -19,6 +19,8 @@ public class PHIL270Card extends CardBase{
 			player.setQualityPoints(player.getQualityPoints() - 3);
 			
 		}
+		return player;
+
 	}
 		
 

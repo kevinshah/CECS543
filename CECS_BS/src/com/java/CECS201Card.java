@@ -8,7 +8,7 @@ public class CECS201Card extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.ECS302Room, Constants.ECS308Room, Constants.ComputerLab));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.CraftChip, player, 8)) {
@@ -20,6 +20,8 @@ public class CECS201Card extends CardBase{
 			loseCards(player, 1);
 			
 		}
+		return player;
+
 	}
 	
 	

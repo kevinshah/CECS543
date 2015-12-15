@@ -1,6 +1,7 @@
 package com.java;
 
 import java.util.ArrayList;
+import com.java.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class ProfessorHoffmanCard extends CardBase{
 			Constants.Elevators, Constants.NorthHall, Constants.SouthHall, Constants.RoomOfRetirement,
 			Constants.CECSConference, Constants.ComputerLab));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 3)) {
@@ -21,6 +22,7 @@ public class ProfessorHoffmanCard extends CardBase{
 			player.setQualityPoints(player.getQualityPoints() - 5);
 			moveToRoom(player, Constants.LactationLounge);
 		}
+		return player;
 	}
 
 }

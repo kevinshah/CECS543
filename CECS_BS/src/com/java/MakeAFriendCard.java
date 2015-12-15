@@ -8,7 +8,7 @@ public class MakeAFriendCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.NorthHall, Constants.SouthHall));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 2)) {
@@ -21,6 +21,8 @@ public class MakeAFriendCard extends CardBase{
 		} else {
 			loseCards(player, 1);
 		}
+		return player;
+
 	}
 
 }

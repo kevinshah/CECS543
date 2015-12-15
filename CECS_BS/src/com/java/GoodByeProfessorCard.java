@@ -9,7 +9,7 @@ public class GoodByeProfessorCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.RoomOfRetirement));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 6) &&
@@ -21,6 +21,8 @@ public class GoodByeProfessorCard extends CardBase{
 			// leave this card in RoR
 			
 		}
+		return player;
+
 	}
 	
 	

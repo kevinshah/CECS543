@@ -8,11 +8,13 @@ public class CECS174ClassCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.ECS302Room));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations)) {
 			player.setLearningChip(player.getLearningChip()+1);
 		}
+		return player;
+
 	}
 
 }

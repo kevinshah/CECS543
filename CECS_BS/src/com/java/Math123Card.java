@@ -8,7 +8,7 @@ public class Math123Card extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.ECS302Room, Constants.ECS308Room));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 5)) {
@@ -18,6 +18,8 @@ public class Math123Card extends CardBase{
 			loseCards(player, 1);
 			
 		}
+		return player;
+
 	}
 
 }

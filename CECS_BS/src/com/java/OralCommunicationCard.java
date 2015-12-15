@@ -10,7 +10,7 @@ public class OralCommunicationCard extends CardBase{
 			Constants.StudentParking, Constants.RecCenter, Constants.WestWalkway, Constants.EastWalkway, Constants.Library, Constants.BratwrustHall, 
 			Constants.LA5, Constants.ForbiddenParking));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 4)) {
@@ -23,6 +23,8 @@ public class OralCommunicationCard extends CardBase{
 			loseCards(player, 1);
 			
 		}
+		return player;
+
 	}
 
 }

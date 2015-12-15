@@ -8,7 +8,7 @@ public class LBSUvsCSUCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.WalterPyramid));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations)) {
 			
@@ -16,6 +16,8 @@ public class LBSUvsCSUCard extends CardBase{
 			// then call IncrementChipBasedonLabel() method
 			
 		}
+		return player;
+
 	}
 
 }

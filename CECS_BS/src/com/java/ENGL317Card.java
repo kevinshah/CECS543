@@ -7,7 +7,7 @@ import java.util.List;
 public class ENGL317Card extends CardBase{
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.LA5));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.CraftChip, player, 6)) {
@@ -16,6 +16,8 @@ public class ENGL317Card extends CardBase{
 			moveToRoom(player, Constants.StudentParking);
 			
 		}
+		return player;
+
 	}
 
 }

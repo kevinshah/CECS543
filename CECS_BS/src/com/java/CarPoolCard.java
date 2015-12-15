@@ -8,7 +8,7 @@ public class CarPoolCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.StudentParking, Constants.ForbiddenParking));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.IntegrityChip, player, 5)) {
@@ -18,6 +18,8 @@ public class CarPoolCard extends CardBase{
 			player.setQualityPoints(player.getQualityPoints() - 2);
 			
 		}
+		return player;
+
 	}
 
 }

@@ -8,11 +8,13 @@ public class FindingTheLabCard extends CardBase{
 
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.Elevators));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations)) {
 			player.setIntegrityChip(player.getIntegrityChip()+1);
 		}
+		return player;
+
 	}
 
 }

@@ -8,7 +8,7 @@ public class MeetTheDeanCard extends CardBase{
 	
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.NorthHall, Constants.SouthHall));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations) && 
 				checkPointsPrerequisite(Constants.LearningChip, player, 3) &&
@@ -22,6 +22,8 @@ public class MeetTheDeanCard extends CardBase{
 			
 				loseCards(player, 1);
 		}
+		return player;
+
 	}
 
 }

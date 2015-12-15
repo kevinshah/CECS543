@@ -9,7 +9,7 @@ public class LateForClassCard extends CardBase{
 	List<String> validLocations = new ArrayList<String>(Arrays.asList(Constants.GeorgeAllenField, Constants.JapaneseGarden, Constants.WalterPyramid, 
 			Constants.StudentParking, Constants.RecCenter, Constants.WestWalkway, Constants.EastWalkway, Constants.Library, Constants.BratwrustHall, Constants.LA5));
 	@Override
-	public void play(Player player) {
+	public Player play(Player player) {
 		// TODO Auto-generated method stub
 		if(isValidLocation(player, validLocations)) {
 			player.setCraftChip(player.getCraftChip() + 1);
@@ -17,6 +17,8 @@ public class LateForClassCard extends CardBase{
 			moveToRoom(player, Constants.LactationLounge);
 			
 		}
+		return player;
+
 	}
 
 }
